@@ -2,60 +2,142 @@
     "usuarios": [
         {
             "id": 1,
-            "name": "a",
+            "name": "Igor",
+            "email": "igor@mag.com",
             "password": "1234",
-            "admin": true
+            "type": "Manager"
         },
         {
             "id": 2,
-            "name": "b",
+            "name": "Carlos",
+            "email": "carlos@mag.com",
             "password": "1234",
-            "admin": false
+            "type": "Supervisor"
+        },
+        {
+            "id": 3,
+            "name": "Vi­nicius",
+            "email": "vinicius@mag.com",
+            "password": "1234",
+            "type": "Supervisor"
+        },
+        {
+            "id": 4,
+            "name": "Jaqueline",
+            "email": "jack@js.com",
+            "password": "1234",
+            "type": "user"
         }
     ],
     "itens": [
         {
             "id": 1,
-            "type": "game",
-            "name": "The Last of Us Part II",
-            "price": 149.90,
-            "discount": 5,
-            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/TLOU_PS4.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Ellie_TLOU.png",
-            "console": "PlayStation 4",
+            "type": "console",
+            "name": "PlayStation 4",
+            "price": 299.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/PS4.png",
+            "imageHover": "",
+            "description": "",
             "stars": 5
         },
         {
             "id": 2,
+            "type": "console",
+            "name": "Xbox Series S",
+            "price": 399.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/XBOX-Series-S.png",
+            "imageHover": "",
+            "description": "",
+            "stars": 3
+        },
+        {
+            "id": 3,
+            "type": "console",
+            "name": "Xbox Series X",
+            "price": 499.90,
+            "discount": 50,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/XBOX-Series-X.png",
+            "imageHover": "",
+            "description": "",
+            "stars": 4
+        },
+        {
+            "id": 4,
+            "type": "console",
+            "name": "PlayStation 5",
+            "price": 499.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/PS5.png",
+            "imageHover": "",
+            "description": "",
+            "stars": 4
+        },
+        {
+            "id": 5,
+            "type": "game",
+            "name": "The Last of Us",
+            "price": 149.90,
+            "discount": 5,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/TLOU_PS5.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Joel_TLOU.png",
+            "description": "PlayStation 5",
+            "stars": 5
+        },
+        {
+            "id": 6,
+            "type": "game",
+            "name": "The Last of Us Part II",
+            "price": 229.90,
+            "discount": 5,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/TLOU2_PS4.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Ellie_TLOU2.png",
+            "description": "PlayStation 4 / PlayStation 5",
+            "stars": 5
+        },
+        {
+            "id": 7,
+            "type": "game",
+            "name": "Minecraft",
+            "price": 49.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Minecraft.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Steve_Minecraft.png",
+            "description": "PlayStation 4",
+            "stars": 4
+        },
+        {
+            "id": 8,
+            "type": "game",
+            "name": "God of War Ragnarok",
+            "price": 249.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/GoW_R.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Kratos_GoW_R.png",
+            "description": "PlayStation 4",
+            "stars": 5
+        },
+        {
+            "id": 9,
             "type": "game",
             "name": "Horizon Forbidden West",
             "price": 99.90,
-            "discount": 0,
+            "discount": 100,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/horizonFW_PS5.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Aloy_HFW.png",
-            "console": "PlayStation 5",
+            "description": "PlayStation 5",
             "stars": 4
         },
         {
-            "id": 3,
+            "id": 10,
             "type": "game",
             "name": "Red Dead Redemption 2",
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/RDR2_PS4.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Arthur_RDR2.png",
-            "console": "PlayStation 4",
-            "stars": 4
-        },
-        {
-            "id": 3,
-            "type": "game",
-            "name": "Red Dead Redemption 2",
-            "price": 249.90,
-            "discount": 0,
-            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/RDR2_PS4.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Arthur_RDR2.png",
-            "console": "PlayStation 4",
+            "description": "PlayStation 4",
             "stars": 4
         }
     ]

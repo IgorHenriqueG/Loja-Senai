@@ -1,7 +1,7 @@
 const eyes = document.querySelectorAll('.eye')
 const login = document.getElementById('login')
 const register = document.getElementById('register')
-const title = document.getElementById('title')
+const logo = document.getElementById('logo')
 
 // Adicionando interação aos corações
 function heart() {
@@ -11,6 +11,7 @@ function heart() {
             heart.classList.toggle('liked')
             if (heart.classList.contains('liked')) {
                 heart.src = '../assets/heartfill.png'
+                console.log(heart.parentNode.parentNode)
             } else {
                 heart.src = '../assets/heart.png'
             }
@@ -19,7 +20,7 @@ function heart() {
 }
 
 // Funções para abrir as telas de Login e Register
-title.onclick = () => {
+logo.onclick = () => {
     document.querySelector('.container').classList.remove('hidden')
     document.querySelector('.login').classList.add('hidden')
     document.querySelector('.register').classList.add('hidden')

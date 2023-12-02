@@ -28,15 +28,16 @@ file.addEventListener('change', (e) => {
 // Criando os cards em referência a quantos itens existem no arquivo JSON
 
 function cards() {
+    cardsContainer.innerHTML = ''
     cardsContainer.innerHTML = `
     <div class="card model">
         <div class="discount-img hidden">
-            <img src="../assets/firecomfire.png">
-            <div class=""></div>
+            <img src="../assets/firecomfire.png" draggable="false">
+            <div class="discount-box"></div>
         </div>
         <div class="main-image">
-            <img src="" onerror="this.src='../assets/noimage.jpg'" class="main-img">
-            <img src="" onerror="this.src='../assets/noimage.jpg'" class="hover-img">
+            <img src="" onerror="this.src='../assets/noimage.jpg'" class="main-img" draggable="false">
+            <img src="" onerror="this.src='../assets/noimage.jpg'" class="hover-img" draggable="false">
         </div>
         <div class="info">
             <h1>a</h1>
@@ -51,7 +52,7 @@ function cards() {
                 <p class="discount subtext">Desconto</p>
                 <p class="percentage subtext">Porcentagem</p>
             </div>
-            <img src="../assets/heart.png" class="heart">
+            <img src="../assets/heart.png" class="heart" draggable="false">
         </div>
     </div>
         `
@@ -63,6 +64,7 @@ function cards() {
         if(item.discount > 0) {
             var discount = (item.price * (100 - item.discount) / 100)
             percentage = `-${item.discount}%`
+            model.classList.add('item-discount')
             discountImg.classList.remove('hidden')
         }else {
             var discount = item.price
@@ -71,8 +73,9 @@ function cards() {
         }
 
         model.classList.remove('model')
+        model.classList.add(item.type)
         model.querySelector('h1').innerHTML = item.name
-        model.querySelector('p').innerHTML = item.console
+        model.querySelector('p').innerHTML = item.description
         model.querySelector('.price-value').innerHTML = `R$${Number(discount).toFixed(2).replace('.', ',')}`
         model.querySelector('.discount').innerHTML = item.price > 0 ? `R$${Number(price).toFixed(2).replace('.', ',')}` : ''
         model.querySelector('.percentage').innerHTML = percentage
@@ -81,9 +84,9 @@ function cards() {
         const rating = model.querySelector('.rating')
         for (let i = 0; i < 5; i++) {
             if (i < item.stars) {
-                rating.innerHTML += `<img src="../assets/star.png">`
+                rating.innerHTML += `<img src="../assets/star.png" draggable="false">`
             } else {
-                rating.innerHTML += `<img src="../assets/star-empty.png">`
+                rating.innerHTML += `<img src="../assets/star-empty.png" draggable="false">`
             }
         }
 

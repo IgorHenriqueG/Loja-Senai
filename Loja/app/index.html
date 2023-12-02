@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/logo.png">
     <title>MAG</title>
 </head>
 <body>
     <header>
-        <h1 id="title">MAG</h1>
+        <img src="../assets/logo.png" id="logo">
+        
         <nav>
             <label class="file-upload" id="file-upload">
                 <input type="file" id="file"/>
@@ -24,11 +26,11 @@
 
     <div class="lr login hidden">
         <form>
-            <label for="username">Usuário</label>
-            <input type="text" id="username">
+            <label for="username">Email</label>
+            <input type="text" id="username" required>
             <label for="password">Senha</label>
             <div class="password">
-                <input type="password" id="password">
+                <input type="password" id="password" required>
                 <img src="../assets/view.png" class="eye">
             </div>
             <p style="color: red; font-size: 12px">Sistema de login não funcional</p>
@@ -38,17 +40,23 @@
     <div class="lr register hidden">
         <form>
             <label for="username-register">Usuário</label>
-            <input type="text" id="username-register">
+            <input type="text" id="username-register" required>
+
+            <label for="username-register">Email</label>
+            <input type="email" id="username-register" required>
+
             <label for="password">Senha</label>
             <div class="password">
-                <input type="password" id="password-register">
+                <input type="password" id="password-register" required>
                 <img src="../assets/view.png" class="eye">
             </div>
+
             <label for="password-confirm">Confirmar Senha</label>
             <div class="password">
-                <input type="password" id="password-confirm">
+                <input type="password" id="password-confirm" required>
                 <img src="../assets/view.png" class="eye">
             </div>
+
             <p style="color: red; font-size: 12px">Sistema de registro não funcional</p>
             <button type="submit">Register</button>
         </form>
@@ -66,20 +74,45 @@
         
 
         <div class="container hidden">
-
             <div class="banner">
                 <div class="banner-text">
                     <h1>MAG</h1>
-                    <p>Games, Consoles e Acessórios</p>
+                    <p>Jogos, Consoles e Acessórios</p>
                 </div>
-                <img src="../assets/banner.jpg" alt="">
+                <img src="../assets/banner.jpg" alt="" draggable="false">
             </div>
 
             <div class="filter">
-                <p>Todos</p>
-                <p>Consoles</p>
-                <p>Games</p>
-                <p>Acessórios</p>
+                <div class="dropdown">
+                    <p>Todos</p>
+                    <div class="dropdown-content">
+                        <p>Desconto</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p>Consoles</p>
+                    <div class="dropdown-content">
+                        <p>PlaySation</p>
+                        <p>Xbox</p>
+                        <p>Nintendo</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p>Jogos</p>
+                    <div class="dropdown-content">
+                        <p>PlaySation</p>
+                        <p>Xbox</p>
+                        <p>Nintendo</p>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <p>Acessórios</p>
+                    <div class="dropdown-content">
+                        <p>Undefined</p>
+                        <p>Undefined</p>
+                        <p>Undefined</p>
+                    </div>
+                </div>
                 <p>Cards</p>
             </div>
             <div class="cards">
@@ -102,7 +135,7 @@
                 </div>
             </div>
         </div>
-        <p>MAG © 2020. Todos os direitos reservados.</p>
+        <p>MAG © 2023. Todos os direitos reservados.</p>
     </footer>
 </body>
 <script src="script.js"></script>
