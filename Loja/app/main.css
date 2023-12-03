@@ -410,6 +410,7 @@ main {
 
 .filter p {
     cursor: pointer;
+    user-select: none;
     padding: 10px;
 }
 

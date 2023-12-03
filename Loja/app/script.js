@@ -30,7 +30,7 @@ file.addEventListener('change', (e) => {
         document.querySelector('footer').style = ''
         document.querySelector('.text-container').classList.add('hidden')
         document.querySelector('.container').classList.remove('hidden')
-        cards(logged)
+        cards()
     }
 })
 
@@ -113,17 +113,6 @@ registerForm.addEventListener('submit', (e) => {
         return
     }
 
-    if(dados.usuarios.length == 0) {
-        dados.usuarios.push({
-            Id: 1,
-            name: registerForm.username.value,
-            email: registerForm.email.value,
-            password: MD5(registerForm.password.value),
-            type: 'user'
-        })
-        localStorage.setItem('dados', JSON.stringify(dados))
-        loginVerification('register')
-    }else{
         var confirm = true
         dados.usuarios.forEach((user) => {
             if(user.email.toLowerCase() == registerForm.email.value.toLowerCase()) {
@@ -135,6 +124,7 @@ registerForm.addEventListener('submit', (e) => {
                 return
             }
         })
+
         if(confirm && registerForm.password.value.length > 4){
             dados.usuarios.push({
                 Id: dados.usuarios.length + 1,
@@ -145,14 +135,12 @@ registerForm.addEventListener('submit', (e) => {
             })
             localStorage.setItem('dados', JSON.stringify(dados))
             loginVerification('register')
-        }else{
+        }else if(confirm){
             errorRegister.innerHTML = 'A senha é muito fraca'
             setTimeout(() => {
                 errorRegister.innerHTML = ''
             }, 1500)
         }
-        
-    }
 })
 
 // Criando os cards em referência a quantos itens existem no arquivo JSON
@@ -193,7 +181,7 @@ function cards() {
         </div>
     </div>
         `
-    dados.itens.forEach((item) => {
+    dados.itens.forEach((item, i) => {
         const model = document.querySelector('.model').cloneNode(true)
         let price = item.price
         let discountImg = model.querySelector('.discount-img')
@@ -211,6 +199,9 @@ function cards() {
 
         model.classList.remove('model')
         model.classList.add(item.type)
+        if(i == 2){
+            model.querySelector('.soldout').classList.remove('hidden')
+        }
         model.querySelector('h1').innerHTML = item.name
         model.querySelector('p').innerHTML = item.description
         model.querySelector('.price-value').innerHTML = `R$<span>${Number(discount).toFixed(2).replace('.', ',')}</span>`
@@ -230,5 +221,7 @@ function cards() {
         cardsContainer.appendChild(model)
     })
     document.querySelector('.model').remove();
+    dropdown()
     heart(logged)
 }
+
