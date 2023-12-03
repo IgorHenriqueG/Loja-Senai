@@ -46,7 +46,7 @@ logo.onclick = function(){
 function menu(logged, username){
     if(logged){
         if(username != null){
-            user = username
+            user = username.split(' ')[0]
         }
         document.querySelector('.buttons').classList.add('hidden')
         document.querySelector('.user').classList.remove('hidden')

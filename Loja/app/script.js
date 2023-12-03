@@ -43,7 +43,7 @@ function loginVerification(p) {
                 usuario = user
                 logged = true
                 document.querySelector('.login-animation-bg').classList.add('active')
-                document.querySelector('#login-animation-text').innerHTML = `Bem vindo(a), <span>${user.name}</span>`
+                document.querySelector('#login-animation-text').innerHTML = `Bem vindo(a), <span>${user.name.split(' ')[0]}</span>`
                 setTimeout(() => {
                     loginForm.reset()
                     menu(logged, user.name)
@@ -68,7 +68,7 @@ function loginVerification(p) {
                 usuario = user
                 logged = true
                 document.querySelector('.login-animation-bg').classList.add('active')
-                document.querySelector('#login-animation-text').innerHTML = `Bem vindo(a), <span>${user.name}</span>`
+                document.querySelector('#login-animation-text').innerHTML = `Bem vindo(a), <span>${user.name.split(' ')[0]}</span>`
                 setTimeout(() => {
                     registerForm.reset()
                     menu(logged, user.name)
