@@ -8,8 +8,18 @@
     <title>MAG</title>
 </head>
 <body>
+
+    <div class="login-animation">
+        <div class="login-animation-bg">
+            <h1 id="login-animation-text"></h1>
+        </div> 
+    </div>
+
     <header>
-        <img src="../assets/logo.png" id="logo">
+        <div style="display: flex; align-items: center; gap: 10px">
+            <img src="../assets/logo.png" id="logo">
+            <p class="username" id="username"></p>
+        </div>
         
         <nav>
             <label class="file-upload" id="file-upload">
@@ -21,33 +31,72 @@
                 <p>|</p>
                 <button id="register">Register</button>
             </div>
+            <div class="user hidden">
+                <button class="logout" id="logout"><p>Logout</p></button>
+                <p>|</p>
+                <button class="cart" id="cart"><img src="../assets/cart.png"></button>
+            </div>
         </nav>
     </header>
 
     <div class="lr login hidden">
-        <form>
-            <label for="username">Email</label>
-            <input type="text" id="username" required>
-            <label for="password">Senha</label>
-            <div class="password">
-                <input type="password" id="password" required>
-                <img src="../assets/view.png" class="eye">
+        <div class="login-passwords">
+            <form id="login-form">
+                <label for="email">Email</label>
+                <input type="text" id="email" required>
+                <label for="password">Senha</label>
+                <div class="password">
+                    <input type="password" id="password" required>
+                    <img src="../assets/view.png" class="eye">
+                </div>
+                <p id="error-login" style="color: red; font-size: 12px"></p>
+                <button type="submit">Login</button>
+            </form>
+            <div class="logins-view">
+                <p id="login-arrow" class="arrow">&#10151;</p>
+                <div>
+                    <div>
+                        <p>Admin:</p>
+                        <p>Igor@mag.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+                <div>
+                    <div>
+                        <p>Supervisor:</p>
+                        <p>Carlos@mag.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+                <div>
+                    <div>
+                        <p>Supervisor:</p>
+                        <p>vinicius@mag.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
+                <div>
+                    <div>
+                        <p>User:</p>
+                        <p>Jack@js.com</p>
+                    </div>
+                    <p>12345</p>
+                </div>
             </div>
-            <p style="color: red; font-size: 12px">Sistema de login não funcional</p>
-            <button type="submit">Login</button>
-        </form>
+        </div>
+        
     </div>
     <div class="lr register hidden">
-        <form>
+        <form id="register-form">
             <label for="username-register">Usuário</label>
-            <input type="text" id="username-register" required>
+            <input type="text" id="username-register" name="username" required>
 
-            <label for="username-register">Email</label>
-            <input type="email" id="username-register" required>
+            <label for="email-register">Email</label>
+            <input type="email" id="email-register" name="email" required>
 
             <label for="password">Senha</label>
             <div class="password">
-                <input type="password" id="password-register" required>
+                <input type="password" id="password-register" name="password" required>
                 <img src="../assets/view.png" class="eye">
             </div>
 
@@ -57,7 +106,7 @@
                 <img src="../assets/view.png" class="eye">
             </div>
 
-            <p style="color: red; font-size: 12px">Sistema de registro não funcional</p>
+            <p id="error-register" style="color: red; font-size: 12px"></p>
             <button type="submit">Register</button>
         </form>
     </div>
@@ -108,9 +157,12 @@
                 <div class="dropdown">
                     <p>Acessórios</p>
                     <div class="dropdown-content">
-                        <p>Undefined</p>
-                        <p>Undefined</p>
-                        <p>Undefined</p>
+                        <p>Controles</p>
+                        <p>Headset</p>
+                        <p>Microfone</p>
+                        <p>Mouse</p>
+                        <p>Mousepad</p>
+                        <p>Teclado</p>
                     </div>
                 </div>
                 <p>Cards</p>

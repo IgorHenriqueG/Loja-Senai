@@ -133,6 +133,63 @@ input[type="file"] {
     cursor: pointer;
 }
 
+.login-passwords {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    z-index: 5;
+}
+
+.logins-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--White);
+    font-family: var(--ff-primary);
+    transition: 1s;
+}
+
+.logins-view .arrow {
+    position: absolute;
+    top: 50%;
+    right: -16%;
+    transform: translateY(-50%);
+    font-size: 55px;
+    cursor: pointer;
+    transition: 1s;
+    user-select: none;
+}
+
+.logins-view.active  {
+    transform: translateX(88%);
+}
+
+.logins-view.active .arrow {
+    transform: rotateY(180deg) translateY(-50%);
+}
+
+.logins-view div {
+    padding: 5px;
+}
+
+.logins-view div div {
+    display: flex;
+}
+
+.logins-view p {
+    margin-right: 5px;
+    text-align: right;
+    user-select: all;
+}
+
 /* Header */
 
 header {
@@ -184,6 +241,79 @@ header button:hover {
 .buttons {
     display: flex;
     gap: 10px;
+}
+
+.login-animation {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--Black);
+    font-family: var(--ff-signature);
+    font-size: 45px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 101;
+    pointer-events: none;
+}
+
+.login-animation-bg {
+    position: absolute;
+    top: 0;
+    width: 0%;
+    height: 100vh;
+    background-color: var(--White);
+    transition: 2s;
+    overflow: hidden;
+}
+
+#login-animation-text {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+.login-animation-bg.active {
+    animation: login-bg 2.5s forwards;
+}
+
+@keyframes login-bg {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 100%;
+    }
+    75% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+        right: 0;
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.user .username {
+    font-size: 38px;
+    font-family: var(--ff-tertiary);
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.cart img {
+    width: 30px;
+    height: 35px;
+    cursor: pointer;
 }
 
 /* Alert Message */
@@ -348,7 +478,7 @@ main {
     height: 540px;
     cursor: pointer;
     transition: 1s ease;
-    overflow: hidden;
+    /* overflow: hidden; Talvez não necessario  */
 }
 
 .main-image {
@@ -458,6 +588,32 @@ main {
     transform: scale(1.2);
 }
 
+.heart-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: max-content;
+    transform: translateX(25%) translateY(-150%);
+    padding: 5px;
+    border-radius: 5px;
+    height: 100%;
+    background-color: var(--Black);
+    color: var(--White);
+    user-select: none;
+}
+
+.heart-text .arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transform: translateX(75%);
+    border-top: 15px solid var(--Black);
+}
+
 .discount-img {
     position: absolute;
     right: 0;
@@ -477,6 +633,19 @@ main {
 
 .discount-img img {
     width: 45px;
+    z-index: 6;
+}
+
+.soldout {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 6;
 }
 

@@ -4,28 +4,28 @@
             "id": 1,
             "name": "Igor",
             "email": "igor@mag.com",
-            "password": "1234",
+            "password": "827ccb0eea8a706c4c34a16891f84e7b",
             "type": "Manager"
         },
         {
             "id": 2,
             "name": "Carlos",
             "email": "carlos@mag.com",
-            "password": "1234",
+            "password": "827ccb0eea8a706c4c34a16891f84e7b",
             "type": "Supervisor"
         },
         {
             "id": 3,
             "name": "Vi­nicius",
             "email": "vinicius@mag.com",
-            "password": "1234",
+            "password": "827ccb0eea8a706c4c34a16891f84e7b",
             "type": "Supervisor"
         },
         {
             "id": 4,
             "name": "Jaqueline",
             "email": "jack@js.com",
-            "password": "1234",
+            "password": "827ccb0eea8a706c4c34a16891f84e7b",
             "type": "user"
         }
     ],
@@ -93,7 +93,7 @@
             "discount": 5,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/TLOU2_PS4.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Ellie_TLOU2.png",
-            "description": "PlayStation 4 / PlayStation 5",
+            "description": "PlayStation 4",
             "stars": 5
         },
         {
