@@ -232,9 +232,8 @@ header button:hover {
 
 
 #logo {
-    border-radius: 100px;
     overflow: hidden !important;
-    width: 100px;
+    width: 55px;
     cursor: pointer;
 }
 
@@ -368,16 +367,7 @@ main {
     text-align: center;
     position: absolute;
     color: var(--White);
-    text-shadow: 
-    2px 0 var(--Black), -2px 0 var(--Black), 0 2px var(--Black), 0 -2px var(--Black),
-    1px 1px var(--Black), -1px -1px var(--Black), 1px -1px var(--Black), -1px 1px var(--Black);
     user-select: none;
-}
-
-.banner-text h1 {
-    font-size: 100px;
-    color: var(--White);
-    font-family: var(--ff-signature);
 }
 
 .banner-text p {
