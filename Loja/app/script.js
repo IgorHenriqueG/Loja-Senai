@@ -27,7 +27,7 @@ file.addEventListener('change', (e) => {
         dados = JSON.parse(reader.result)
         document.querySelector('.file-upload').classList.add('hidden')
         document.querySelector('.buttons').classList.remove('hidden')
-        document.querySelector('footer').style = ''
+        document.querySelector('footer').removeAttribute('style')
         document.querySelector('.text-container').classList.add('hidden')
         document.querySelector('.container').classList.remove('hidden')
         cards()
@@ -134,6 +134,7 @@ registerForm.addEventListener('submit', (e) => {
                 type: 'user'
             })
             localStorage.setItem('dados', JSON.stringify(dados))
+            console.log(dados)
             loginVerification('register')
         }else if(confirm){
             errorRegister.innerHTML = 'A senha é muito fraca'
@@ -149,9 +150,12 @@ function cards() {
     cardsContainer.innerHTML = ''
     cardsContainer.innerHTML = `
     <div class="card model">
+        <div class="card-icons">
+            <i class="bi bi-trash3-fill delete hidden" style="cursor: not-allowed"></i>
+            <i class="bi bi-pencil-square edit hidden" style="cursor: not-allowed"></i>
+        </div>
         <div class="discount-img hidden">
             <img src="../assets/firecomfire.png" draggable="false">
-            <div class="discount-box"></div>
         </div>
         <div class="main-image">
             <img src="" onerror="this.src='../assets/noimage.jpg'" class="main-img" draggable="false">
@@ -159,10 +163,13 @@ function cards() {
             <img src="../assets/soldout.png" onerror="this.src='../assets/noimage.jpg'" class="soldout hidden" draggable="false">
         </div>
         <div class="info">
-            <h1>a</h1>
-            <p>a</p>
+            <h1>Nome</h1>
+            <p>Descrição</p>
             <div class="rating">
                 
+            </div>
+            <div class="stock">
+                <p class="stock-value">Estoque: <span>0</span></p>
             </div>
         </div>
         <div class="buy">
@@ -186,6 +193,15 @@ function cards() {
         let price = item.price
         let discountImg = model.querySelector('.discount-img')
 
+
+        if(item.discount == 0 && item.stock < 6){
+            item.discount = 10
+            var discount = (item.price * (100 - item.discount) / 100)
+            percentage = `-${10}%`
+            model.classList.add('item-discount')
+            discountImg.classList.remove('hidden')
+        }
+
         if(item.discount > 0) {
             var discount = (item.price * (100 - item.discount) / 100)
             percentage = `-${item.discount}%`
@@ -197,15 +213,29 @@ function cards() {
             percentage = ''
         }
 
-        model.classList.remove('model')
-        model.classList.add(item.type)
-        if(i == 2){
+        if(logged && usuario.type == 'Manager'){
+            model.querySelector('.delete').classList.remove('hidden')
+            model.querySelector('.edit').classList.remove('hidden')
+            model.querySelector('.delete').removeAttribute('style')
+            model.querySelector('.edit').removeAttribute('style')
+            userType(usuario.type, model.querySelector('.delete'), model.querySelector('.edit'), i)
+        }else if(logged && usuario.type == 'Supervisor'){
+            model.querySelector('.edit').classList.remove('hidden')
+            model.querySelector('.edit').removeAttribute('style')
+            userType(usuario.type, null, model.querySelector('.edit'), i)
+        }
+
+        if(item.stock == 0){
             model.querySelector('.soldout').classList.remove('hidden')
         }
+
+        model.classList.remove('model')
+        model.classList.add(item.type)
         model.querySelector('h1').innerHTML = item.name
         model.querySelector('p').innerHTML = item.description
         model.querySelector('.price-value').innerHTML = `R$<span>${Number(discount).toFixed(2).replace('.', ',')}</span>`
         model.querySelector('.discount').innerHTML = price > 0 ? `R$${Number(price).toFixed(2).replace('.', ',')}` : ''
+        model.querySelector('.stock-value span').innerHTML = item.stock
         model.querySelector('.percentage').innerHTML = percentage
         model.querySelector('.hover-img').src = item.imageHover
         model.querySelector('.main-img').src = item.image == '404' ? '../assets/noimage.jpg' : item.image
@@ -217,6 +247,8 @@ function cards() {
                 rating.innerHTML += `<img src="../assets/star-empty.png" draggable="false">`
             }
         }
+
+        
 
         cardsContainer.appendChild(model)
     })

@@ -39,6 +39,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/PS4.png",
             "imageHover": "",
             "description": "",
+            "stock": 10,
             "stars": 4
         },
         {
@@ -50,6 +51,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/XBOX-Series-S.png",
             "imageHover": "",
             "description": "",
+            "stock": 15,
             "stars": 3
         },
         {
@@ -61,6 +63,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/XBOX-Series-X.png",
             "imageHover": "",
             "description": "",
+            "stock": 12,
             "stars": 4
         },
         {
@@ -72,6 +75,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/PS5.png",
             "imageHover": "",
             "description": "",
+            "stock": 17,
             "stars": 5
         },
         {
@@ -83,6 +87,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/TLOU_PS5.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Joel_TLOU.png",
             "description": "PlayStation 5",
+            "stock": 20,
             "stars": 5
         },
         {
@@ -94,6 +99,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/TLOU2_PS4.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Ellie_TLOU2.png",
             "description": "PlayStation 4",
+            "stock": 0,
             "stars": 5
         },
         {
@@ -105,6 +111,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Minecraft.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Steve_Minecraft.png",
             "description": "PlayStation 4",
+            "stock": 28,
             "stars": 4
         },
         {
@@ -116,6 +123,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/GoW_R.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Kratos_GoW_R.png",
             "description": "PlayStation 4",
+            "stock": 100,
             "stars": 5
         },
         {
@@ -127,6 +135,7 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/horizonFW_PS5.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Aloy_HFW.png",
             "description": "PlayStation 5",
+            "stock": 24,
             "stars": 4
         },
         {
@@ -138,7 +147,80 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/RDR2_PS4.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Arthur_RDR2.png",
             "description": "PlayStation 4",
+            "stock": 7,
             "stars": 4
+        },
+        {
+            "id": 11,
+            "type": "game",
+            "name": "Dishonored",
+            "price": 149.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Dishonored_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Dishonored_Xbox.png",
+            "description": "Xbox",
+            "stock": 43,
+            "stars": 3
+        },
+        {
+            "id": 12,
+            "type": "game",
+            "name": "Rainbow Six Siege",
+            "price": 249.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/R6_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/R6_Xbox.png",
+            "description": "Xbox",
+            "stock": 24,
+            "stars": 5
+        },
+        {
+            "id": 13,
+            "type": "game",
+            "name": "Modern Warfare II",
+            "price": 249.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/MW2_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/MW2_Xbox.png",
+            "description": "Xbox",
+            "stock": 21,
+            "stars": 5
+        },
+        {
+            "id": 14,
+            "type": "game",
+            "name": "Watch Dogs Legion",
+            "price": 249.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/WDL_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/WDL_Xbox.png",
+            "description": "Xbox",
+            "stock": 11,
+            "stars": 5
+        },
+        {
+            "id": 15,
+            "type": "game",
+            "name": "Residence Evil Village",
+            "price": 249.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/REV_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/REV_Xbox.png",
+            "description": "Xbox",
+            "stock": 7,
+            "stars": 5
+        },
+        {
+            "id": 16,
+            "type": "game",
+            "name": "Battleborn",
+            "price": 249.90,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Battleborn_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Battleborn_Xbox.png",
+            "description": "Xbox",
+            "stock": 4,
+            "stars": 5
         }
     ]
 }

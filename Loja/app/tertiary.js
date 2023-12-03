@@ -1,24 +1,43 @@
-const dropdowns = document.querySelectorAll('.dropdown')
+const editPrompt = document.querySelector(".edit-prompt")
 
-function dropdown(){
-    const cardsFilter = document.querySelectorAll('.card')
+function userType(role, deleteBtn, editBtn, indice) {
+    if(role == "Manager" || role == "Supervisor") {
+        if(role == "Manager") {
+            deleteBtn.addEventListener("click", () => {
+                if(confirm('Você deseja deletar o item?') == true){
+                    dados.itens.splice(indice, 1)
+                    cards()
+                }
+            })
+        }
+        editBtn.addEventListener("click", () => {
+            
+            editPrompt.classList.remove("hidden")
 
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', (e) => {
+            editPrompt.querySelector('#edit-name').value = dados.itens[indice].name
+            editPrompt.querySelector('#edit-description').value = dados.itens[indice].description
+            editPrompt.querySelector('#edit-price').value = dados.itens[indice].price
+            editPrompt.querySelector('#edit-discount').value = dados.itens[indice].discount
+            editPrompt.querySelector('#edit-stars').value = dados.itens[indice].stars
+            editPrompt.querySelector('#edit-stock').value = dados.itens[indice].stock
 
-            if(e.target.innerHTML == "Todos"){
-                cardsFilter.forEach(card => {
-                    card.classList.remove('hidden')
-                })
-            }else if(e.target.innerHTML == "Desconto") { 
-                cardsFilter.forEach(card => {
-                    if(!card.classList.contains('item-discount')){
-                        card.classList.add('hidden')
-                    }
-                })
-            }
+            editPrompt.querySelector('#edit-form').addEventListener("submit", (e) => {
+                e.preventDefault()
+                dados.itens[indice].name = editPrompt.querySelector('#edit-name').value
+                dados.itens[indice].description = editPrompt.querySelector('#edit-description').value
+                dados.itens[indice].price = editPrompt.querySelector('#edit-price').value.replace(',', '.')
+                dados.itens[indice].discount = editPrompt.querySelector('#edit-discount').value.replace(',', '.')
+                dados.itens[indice].stars = editPrompt.querySelector('#edit-stars').value
+                dados.itens[indice].stock = editPrompt.querySelector('#edit-stock').value
+                editPrompt.classList.add("hidden")
+                indice = null
+                cards()
+            })
+            
+            editPrompt.querySelector('#edit-form').addEventListener("reset", () => {
+                indice = null
+                editPrompt.classList.add("hidden")
+            })
         })
-    })
+    }
 }
-
-// card.classList.contains('item-discount')

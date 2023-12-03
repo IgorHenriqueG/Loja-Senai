@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel='shortcut icon' type='image/x-icon' href='../assets/logo_2.png'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <title>MAG</title>
 </head>
 <body>
@@ -33,8 +34,8 @@
             </div>
             <div class="user hidden">
                 <button class="logout" id="logout"><p>Logout</p></button>
-                <p>|</p>
-                <button class="cart" id="cart"><img src="../assets/cart.png"></button>
+                <p class="user-bar">|</p>
+                <button class="bag" id="bag"><i class="bi bi-bag"></i></button>
             </div>
         </nav>
     </header>
@@ -112,7 +113,44 @@
     </div>
 
     <main>
+        <div class="edit-prompt hidden">
+            <form id="edit-form">
+                <div>
+                    <label for="edit-name">Produto</label>
+                    <input type="text" id="edit-name">
+                </div>
+                
+                <div>
+                    <label for="edit-description">Descrição</label>
+                    <input type="text" id="edit-description">
+                </div>
+                
+                <div>
+                    <label for="edit-price">Preço (R$)</label>
+                    <input type="text" id="edit-price">
+                </div>
 
+                <div>
+                    <label for="edit-discount">Desconto (R$)</label>
+                    <input type="text" id="edit-discount">
+                </div>
+
+                <div>
+                    <label for="edit-stars">Estrelas (0-5)</label>
+                    <input type="number" id="edit-stars">
+                </div>
+                
+                <div>
+                    <label for="edit-stock">Estoque</label>
+                    <input type="number" id="edit-stock">
+                </div>
+
+                <div class="btn-form">
+                    <button id="save-edit" type="submit">Salvar</button>
+                    <button id="cancel-edit" type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
 
         <div class="text-container">
             <h1>Trabalhando com dados locais</h1>
@@ -141,7 +179,7 @@
                 <div class="dropdown">
                     <p>Consoles</p>
                     <div class="dropdown-content">
-                        <p>PlaySation</p>
+                        <p>PlayStation</p>
                         <p>Xbox</p>
                         <p>Nintendo</p>
                     </div>
@@ -149,7 +187,7 @@
                 <div class="dropdown">
                     <p>Jogos</p>
                     <div class="dropdown-content">
-                        <p class="games">PlaySation</p>
+                        <p class="games">PlayStation</p>
                         <p class="games">Xbox</p>
                         <p class="games">Nintendo</p>
                     </div>
@@ -183,7 +221,7 @@
                 </div>
                 <div class="row">
                     <p><a href="https://github.com/Vinimanzano" target="_blank">Vinícius Manzano</a></p>
-                    <p>Jaqueline Faria</p>
+                    <p>Jaqueline de Faria</p>
                 </div>
             </div>
         </div>
@@ -193,4 +231,5 @@
 <script src="script.js"></script>
 <script src="secundary.js"></script>
 <script src="tertiary.js"></script>
+<script src="quaternary.js"></script>
 </html>
