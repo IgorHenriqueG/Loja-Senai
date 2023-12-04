@@ -28,6 +28,7 @@ body {
 
     --active: #E5E5E5;
     --deactive: #828282;
+    --Discount: #999;
 
     --Pink: #F72585;
     --Purple: #7209B7;
@@ -38,6 +39,7 @@ body {
     --Orange: #FB5607;
     --Red: #FF006E;
     --Yellow: #FFBE0B;
+    --Green: green;
 
     --ff-primary: 'Roboto', sans-serif;
     --ff-secundary: Arial, sans-serif;;
@@ -330,6 +332,7 @@ header button:hover {
 .bag {
     font-size: 22px;
     transform: translateY(2px);
+    cursor: pointer;
 }
 
 /* Alert Message */
@@ -411,7 +414,7 @@ main {
     padding: 20px;
     font-family: var(--ff-primary);
     text-transform: uppercase;
-    z-index: 100;
+    z-index: 99;
     cursor: default;
 }
 
@@ -687,7 +690,7 @@ main {
 .price-value {
     font-size: 24px;
     font-weight: bold;
-    color: green;
+    color: var(--Green);
 }
 
 .percentage {
@@ -697,7 +700,7 @@ main {
 
 .discount {
     text-decoration: line-through;
-    color: #999;
+    color: var(--Discount);
 }
 
 .heart {
@@ -762,6 +765,81 @@ main {
     z-index: 6;
 }
 
+/* Store */
+
+.wishlist {
+    position: fixed;
+    right: 0;
+    top: 90px;
+    width: 25vw;
+    height: 100vh;
+    background-color: var(--White);
+    box-shadow: -10px 0 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(110%);
+    transition: 1.5s;
+    z-index: 100;
+}
+
+.wishlist-item {
+    display: flex;
+    background-color: var(--White-2);
+    width: 100%;
+    height: 15%;
+}
+
+.wishlist-item img {
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+}
+
+.wishlist-item-desc {
+    width: 100%;
+    padding-block: 10px;
+}
+
+.wishlist-item-desc p {
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: var(--ff-tertiary);
+    user-select: none;
+}
+
+.wishlist-item-desc .produt-name {
+    font-size: 25px;
+}
+
+.product-price {
+    color: var(--Green);
+}
+
+.product-unity {
+    color: var(--Discount);
+}
+
+.wishlist-item-actions-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wishlist-item-actions {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.wishlist-item-actions i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.wishlist.active {
+    transform: translateX(0);
+}
+
 /* Footer */
 
 footer {
@@ -774,6 +852,7 @@ footer {
     color: var(--White);
     font-family: var(--ff-secundary);
     user-select: none;
+    z-index: 101;
 }
 
 footer .signature {

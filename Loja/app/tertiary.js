@@ -1,4 +1,7 @@
 const editPrompt = document.querySelector(".edit-prompt")
+const wishlistBag = document.querySelector('#bag')
+
+var wishlist = []
 
 function userType(role, deleteBtn, editBtn, indice) {
     if(role == "Manager" || role == "Supervisor") {
@@ -41,3 +44,7 @@ function userType(role, deleteBtn, editBtn, indice) {
         })
     }
 }
+
+wishlistBag.addEventListener('click', () => {
+    document.querySelector('.wishlist').classList.toggle('active')
+})
