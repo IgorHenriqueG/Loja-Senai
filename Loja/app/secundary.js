@@ -39,7 +39,7 @@ function heart(logged) {
                 if (heart.classList.contains('liked')) {
                     heart.src = '../assets/heartfill.png'
 
-                    let item = heart.parentElement.parentElement.parentElement
+                    let item = heart.parentElement.parentElement.parentElement // Olhar git professor
                     wishlist.push({
                         name: item.querySelector('.info h1').innerHTML,
                         price: item.querySelector('.price-value').innerHTML,
