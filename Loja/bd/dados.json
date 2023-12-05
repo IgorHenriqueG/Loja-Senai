@@ -169,7 +169,7 @@
             "price": 149.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Dishonored_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Dishonored_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/dishonoredC_XBOX.png",
             "description": "Xbox",
             "stock": 43,
             "stars": 3
@@ -181,7 +181,7 @@
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/R6_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/R6_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Ash_R6.png",
             "description": "Xbox",
             "stock": 24,
             "stars": 4
@@ -193,7 +193,7 @@
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/MW2_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/MW2_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/",
             "description": "Xbox",
             "stock": 21,
             "stars": 5
@@ -205,7 +205,7 @@
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/WDL_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/WDL_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Watch_Dogs_Legion_Xbox.png",
             "description": "Xbox",
             "stock": 11,
             "stars": 3
@@ -217,7 +217,7 @@
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/REV_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/REV_Xbox.png",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Resident_Evil_Village_PS5.png",
             "description": "Xbox",
             "stock": 7,
             "stars": 4
@@ -225,11 +225,11 @@
         {
             "id": 17,
             "type": "game",
-            "name": "Battleborn",
+            "name": "Halo Infinite",
             "price": 49.90,
             "discount": 30,
-            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Battleborn_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Battleborn_Xbox.png",
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/halo_infinite.jpg",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/master_chief.png",
             "description": "Xbox",
             "stock": 8,
             "stars": 2
@@ -241,7 +241,7 @@
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/ACM_PS5.png",
-            "imageHover": "",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/basim_ACM.png",
             "description": "PlayStation 5",
             "stock": 0,
             "stars": 5
@@ -253,7 +253,7 @@
             "price": 449.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Hogwarts_Legacy_PS5.png",
-            "imageHover": "",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Hogwarts_LegacyC_PS5.png",
             "description": "PlayStation 5",
             "stock": 6,
             "stars": 5
@@ -265,11 +265,10 @@
             "price": 449.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Mario_Nintendo.png",
-            "imageHover": "",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Mario_NintendoC.png",
             "description": "Nintendo Switch",
             "stock": 6,
             "stars": 2
-
         }
     ]
 }
