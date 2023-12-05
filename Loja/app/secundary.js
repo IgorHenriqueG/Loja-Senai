@@ -10,47 +10,56 @@ function listAdd(){
     wishlistModel.innerHTML = ''
     wishlist.forEach(item => {
         wishlistModel.innerHTML += `
-            <div class="wishlist-item">
+            <div class="wishlist-item" item-id="${item.id}">
                 <img src="${item.image}" draggable="false">
                 <div class="wishlist-item-desc">
                     <p class="produt-name">${item.name}</p>
-                    <p class="product-price">${item.price}</p>
-                    <p class="product-unity">${item.price}</p>
+                    <p class="product-price">R$${(item.price * item.quantity).toFixed(2)}</p>
+                    <p class="product-unity">R$${item.price.toFixed(2)}</p>
                 </div>
                 <div class="wishlist-item-actions-container">
                     <div class="wishlist-item-actions">
-                        <i class="bi bi-dash-square wishlist-icon"></i>
-                        <p class="product-quantity">1</p>
-                        <i class="bi bi-plus-square wishlist-icon"></i>
+                        <i class="bi bi-dash-square wishlist-icon dash-icon"></i>
+                        <p class="product-quantity">${item.quantity}</p>
+                        <i class="bi bi-plus-square wishlist-icon plus-icon"></i>
                     </div>
                 </div>
             </div>
         `
     })
+    wishlistQty()
 }
 
 // Adicionando interação aos corações
 function heart(logged) {
     const hearts = document.querySelectorAll('.heart')
-    hearts.forEach((heart, i) => {
+    hearts.forEach((heart) => {
         heart.onclick = () => {
+            var item = heart.parentElement.parentElement.parentElement
+            var itemId = Number(item.getAttribute('item-id'))
             if(logged){
-                heart.classList.toggle('liked')
-                if (heart.classList.contains('liked')) {
-                    heart.src = '../assets/heartfill.png'
-
-                    let item = heart.parentElement.parentElement.parentElement // Olhar git professor
-                    wishlist.push({
-                        name: item.querySelector('.info h1').innerHTML,
-                        price: item.querySelector('.price-value').innerHTML,
-                        image: item.querySelector('.main-img').src
-                    })
-                    listAdd()
-                } else {
-                    heart.src = '../assets/heart.png'
-                    wishlist.splice(i, 1)
-                    console.log(wishlist)
-                    listAdd()
+                if(item.querySelector('.stock-value').querySelector('span').innerHTML != 0){
+                        heart.classList.toggle('liked')
+                    if (heart.classList.contains('liked')) {
+                        heart.src = '../assets/heartfill.png'
+                        let itemPrice = item.querySelector('.price-value').querySelector('span').innerHTML.replace(',', '.')
+                        wishlist.push({
+                            id: itemId,
+                            image: item.querySelector('.main-img').src,
+                            name: item.querySelector('h1').innerHTML,
+                            price: Number(itemPrice),
+                            quantity: 1
+                        })
+                        listAdd()
+                    } else {
+                        heart.src = '../assets/heart.png'
+                        wishlist.forEach((item, index) => {
+                            if (item.id == itemId) {
+                                wishlist.splice(index, 1)
+                            }
+                        })
+                        listAdd()
+                    }
                 }
             }else{
                 heart.parentNode.querySelector('.heart-text').classList.remove('hidden')
@@ -70,13 +79,14 @@ loginArrow.onclick = () => {
 
 // Funções para abrir as telas de Login e Register
 
-logo.onclick = function(){
-    if(document.querySelector('#username').innerHTML != ''){
-        menu(true)
-    }else{
-        menu(false)
+function menuLogo(){
+    logo.onclick = function(){
+        if(document.querySelector('#username').innerHTML != ''){
+            menu(true)
+        }else{
+            menu(false)
+        }
     }
-    
 }
 
 function menu(logged, username){

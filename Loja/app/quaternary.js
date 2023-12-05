@@ -69,7 +69,45 @@ function dropdown(){
                         card.classList.add('hidden')
                     }
                 })
+            }else if(e.target.innerHTML == "Acessórios"){
+                cardsFilter.forEach(card => {
+                    card.classList.remove('hidden')
+                    if(!card.classList.contains('Acessórios')){
+                        card.classList.add('hidden')
+                    }
+                })
+            }else if (e.target.innerHTML == "Controles"){
+                cardsFilter.forEach(card => {
+                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Controles"){
+                        card.classList.add('hidden')
+                    }
+                })
+            }else if (e.target.innerHTML == "Headset"){
+                cardsFilter.forEach(card => {
+                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Headset"){
+                        card.classList.add('hidden')
+                    }
+                })
+            }else if (e.target.innerHTML == "Microfone"){
+                cardsFilter.forEach(card => {
+                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Microfone"){
+                        card.classList.add('hidden')
+                    }
+                })
+            }else if (e.target.innerHTML == "Mouse"){
+                cardsFilter.forEach(card => {
+                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Mouse"){
+                        card.classList.add('hidden')
+                    }
+                })
+            }else if (e.target.innerHTML == "Teclado"){
+                cardsFilter.forEach(card => {
+                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Teclado"){
+                        card.classList.add('hidden')
+                    }
+                })
             }
         })
     })
 }
+

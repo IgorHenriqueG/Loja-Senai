@@ -31,6 +31,7 @@ file.addEventListener('change', (e) => {
         document.querySelector('.text-container').classList.add('hidden')
         document.querySelector('.container').classList.remove('hidden')
         cards()
+        menuLogo()
     }
 })
 
@@ -230,6 +231,7 @@ function cards() {
         }
 
         model.classList.remove('model')
+        model.setAttribute('item-id', item.id)
         model.classList.add(item.type)
         model.querySelector('h1').innerHTML = item.name
         model.querySelector('p').innerHTML = item.description
@@ -247,9 +249,6 @@ function cards() {
                 rating.innerHTML += `<img src="../assets/star-empty.png" draggable="false">`
             }
         }
-
-        
-
         cardsContainer.appendChild(model)
     })
     document.querySelector('.model').remove();

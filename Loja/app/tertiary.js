@@ -10,6 +10,13 @@ function userType(role, deleteBtn, editBtn, indice) {
                 if(confirm('Você deseja deletar o item?') == true){
                     dados.itens.splice(indice, 1)
                     cards()
+                    // let itemId = Number(item.getAttribute('item-id'))
+                    // wishlist.forEach((item, index) => {
+                    //     if (item.id == itemId) {
+                    //         wishlist.splice(index, 1)
+                    //     }
+                    // })
+                    // listAdd()
                 }
             })
         }
@@ -48,3 +55,55 @@ function userType(role, deleteBtn, editBtn, indice) {
 wishlistBag.addEventListener('click', () => {
     document.querySelector('.wishlist').classList.toggle('active')
 })
+
+function wishlistQty(){
+    const dashIcon = document.querySelectorAll('.dash-icon')
+    const plusIcon = document.querySelectorAll('.plus-icon')
+
+    dashIcon.forEach((dash) => {
+        if(dash.parentElement.querySelector('.product-quantity').innerHTML == 1) {
+            dash.style.cursor = "not-allowed"
+        } else {
+            dash.addEventListener('click', (e) => {
+                e.target.parentElement.querySelector('.plus-icon').style.cursor = "pointer"
+                if(e.target.parentElement.querySelector('.product-quantity').innerHTML > 1){
+                    dash.style.cursor = "pointer"
+                    e.target.parentElement.querySelector('.product-quantity').innerHTML = Number(e.target.parentElement.querySelector('.product-quantity').innerHTML) - 1
+                    if(e.target.parentElement.querySelector('.product-quantity').innerHTML == 1){
+                        dash.style.cursor = "not-allowed"
+                    }
+                }
+                calculate(e.target.parentElement)
+            })
+        }
+        
+    })
+
+    plusIcon.forEach((plus) => {
+        if(plus.parentElement.querySelector('.product-quantity').innerHTML == 10) {
+            plus.style.cursor = "not-allowed"
+        } else {
+            plus.addEventListener('click', (e) => {
+                e.target.parentElement.querySelector('.dash-icon').style.cursor = "pointer"
+                if(e.target.parentElement.querySelector('.product-quantity').innerHTML < 10) {
+                    plus.style.cursor = "pointer"
+                    e.target.parentElement.querySelector('.product-quantity').innerHTML = Number(e.target.parentElement.querySelector('.product-quantity').innerHTML) + 1
+                    if(e.target.parentElement.querySelector('.product-quantity').innerHTML == 10){
+                        plus.style.cursor = "not-allowed"
+                    }
+                }
+                calculate(e.target.parentElement)
+            })
+        } 
+    })
+}
+
+function calculate(target){
+    wishlist.forEach((item, index) => {
+        if(target.parentElement.parentElement.getAttribute('item-id') == item.id){
+            console.log(target.parentElement.parentElement.getAttribute('item-id'))
+            item.quantity = Number(target.querySelector('.product-quantity').innerHTML)
+            listAdd()
+        }
+    })
+}

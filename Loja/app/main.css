@@ -49,6 +49,10 @@ body {
 
 /* Global */
 
+i {
+    user-select: none;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -823,6 +827,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .wishlist-item-actions {
