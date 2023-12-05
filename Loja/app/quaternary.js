@@ -65,6 +65,7 @@ function dropdown(){
                 })
             }else if (e.target.innerHTML == "Nintendo"){
                 cardsFilter.forEach(card => {
+                    card.classList.remove('hidden')
                     if(card.querySelector('p').innerHTML.split(' ')[0] != "Nintendo"){
                         card.classList.add('hidden')
                     }

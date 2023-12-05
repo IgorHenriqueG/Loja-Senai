@@ -81,6 +81,7 @@ loginArrow.onclick = () => {
 
 function menuLogo(){
     logo.onclick = function(){
+        document.documentElement.scrollTop = 0
         if(document.querySelector('#username').innerHTML != ''){
             menu(true)
         }else{
@@ -108,7 +109,7 @@ function menu(logged, username){
     document.querySelector('.register').classList.add('hidden')
 }
 loginBtn.onclick = () => {
-    document.querySelector('body').scrollTo(0, 0)
+    document.documentElement.scrollTop = 0
     document.querySelector('.container').classList.add('hidden')
     document.querySelector('.login').classList.remove('hidden')
     document.querySelector('.register').classList.add('hidden')
@@ -116,6 +117,8 @@ loginBtn.onclick = () => {
 }
 
 registerBtn.onclick = () => {
+    document.documentElement.scrollTop = 0
+    document.querySelector('body').style = 'overflow: hidden'
     document.querySelector('.container').classList.add('hidden')
     document.querySelector('.login').classList.add('hidden')
     document.querySelector('.register').classList.remove('hidden')

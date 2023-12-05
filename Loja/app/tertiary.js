@@ -10,14 +10,15 @@ function userType(role, deleteBtn, editBtn, indice) {
                 if(confirm('Você deseja deletar o item?') == true){
                     dados.itens.splice(indice, 1)
                     cards()
-                    // let itemId = Number(item.getAttribute('item-id'))
                     // wishlist.forEach((item, index) => {
-                    //     if (item.id == itemId) {
-                    //         wishlist.splice(index, 1)
+                    //     console.log(item.id, indice, index)
+                    //     if (indice == item.id && item.id == index) {
+                    //         wishlist.splice(indice, 1)
                     //     }
                     // })
                     // listAdd()
                 }
+                    
             })
         }
         editBtn.addEventListener("click", () => {
