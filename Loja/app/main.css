@@ -456,7 +456,17 @@ main {
 }
 
 .dropdown-content p {
+    display: flex;
+    gap: 5px;
     padding: 12px 16px;
+}
+
+.dropdown-content i {
+    pointer-events: none;
+    text-decoration: none;
+    font-style: normal;
+    display: flex;
+    gap: 20px;
 }
 
 .dropdown-content p:hover {

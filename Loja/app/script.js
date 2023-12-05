@@ -255,4 +255,3 @@ function cards() {
     dropdown()
     heart(logged)
 }
-

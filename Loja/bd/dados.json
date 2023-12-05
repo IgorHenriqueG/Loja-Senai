@@ -81,7 +81,7 @@
         {
             "id": 5,
             "type": "console",
-            "name": "Nintendo",
+            "name": "Nintendo Switch",
             "price": 230.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/nintendo.png",
@@ -170,7 +170,7 @@
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Dishonored_Xbox.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/dishonoredC_XBOX.png",
-            "description": "Xbox",
+            "description": "Xbox 360",
             "stock": 43,
             "stars": 3
         },
@@ -182,7 +182,7 @@
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/R6_Xbox.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Ash_R6.png",
-            "description": "Xbox",
+            "description": "Xbox One",
             "stock": 24,
             "stars": 4
         },
@@ -193,8 +193,8 @@
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/MW2_Xbox.png",
-            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/",
-            "description": "Xbox",
+            "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Morderm_Warfare_Xbox.png",
+            "description": "Xbox One/Series X",
             "stock": 21,
             "stars": 5
         },
@@ -206,19 +206,19 @@
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/WDL_Xbox.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Watch_Dogs_Legion_Xbox.png",
-            "description": "Xbox",
+            "description": "Xbox One/Series X",
             "stock": 11,
             "stars": 3
         },
         {
             "id": 16,
             "type": "game",
-            "name": "Residence Evil Village",
+            "name": "Resident Evil Village",
             "price": 249.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/REV_Xbox.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Resident_Evil_Village_PS5.png",
-            "description": "Xbox",
+            "description": "Xbox One/Series X",
             "stock": 7,
             "stars": 4
         },
