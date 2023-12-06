@@ -96,6 +96,7 @@ loginForm.addEventListener('submit', (e) => {
 document.querySelector('.logout').addEventListener('click', () => {
     logged = false
     usuario = {}
+    document.querySelector('.wishlist').classList.remove('active')
     menu(logged)
     cards()
     heart(logged)
@@ -150,11 +151,17 @@ registerForm.addEventListener('submit', (e) => {
 function cards() {
     var heartsSave = []
 
-    document.querySelectorAll('.heart').forEach((heart) => {
-        if(heart.classList.contains('liked')) {
-            heartsSave.push(heart.parentElement.parentElement.parentElement.getAttribute('item-id'))
-        }
-    })
+    if(logged){
+        document.querySelectorAll('.heart').forEach((heart) => {
+            if(heart.classList.contains('liked')) {
+                heartsSave.push(heart.parentElement.parentElement.parentElement.getAttribute('item-id'))
+            }
+        })
+    }else {
+        wishlist = []
+        listAdd()
+    }
+    
 
     cardsContainer.innerHTML = ''
     cardsContainer.innerHTML = `

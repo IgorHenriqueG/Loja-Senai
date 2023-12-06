@@ -3,7 +3,7 @@ const loginBtn = document.getElementById('login')
 const registerBtn = document.getElementById('register')
 const logo = document.getElementById('logo')
 const loginArrow = document.querySelector('#login-arrow')
-const wishlistModel = document.querySelector('.wishlist')
+const wishlistModel = document.querySelector('.wishlist-item-container')
 
 
 function listAdd(){
@@ -18,6 +18,7 @@ function listAdd(){
                     <p class="product-unity">R$${item.price.toFixed(2)}</p>
                 </div>
                 <div class="wishlist-item-actions-container">
+                    <i class="bi bi-trash3-fill del-wishlist"></i>
                     <div class="wishlist-item-actions">
                         <i class="bi bi-dash-square wishlist-icon dash-icon"></i>
                         <p class="product-quantity">${item.quantity}</p>
@@ -28,7 +29,31 @@ function listAdd(){
         `
     })
     wishlistQty()
+    listRemove()
 }
+
+function listRemove() {
+    var delList = document.querySelectorAll('.del-wishlist')
+    if(delList.length > 0){
+        delList.forEach((del) => {
+            del.addEventListener("click", (e) => {  
+                wishlist.forEach((item, index) => {
+                    if(item.id == Number(e.target.parentElement.parentElement.getAttribute('item-id'))){
+                        wishlist.splice(index, 1)
+                    }
+                })
+                listAdd()
+                dados.itens.forEach((item, index) => {
+                    if(item.id == Number(e.target.parentElement.parentElement.getAttribute('item-id'))){
+                        document.querySelectorAll('.card')[index].querySelector('.heart').classList.remove('liked')
+                        document.querySelectorAll('.card')[index].querySelector('.heart').src = '../assets/heart.png'
+                    }
+                })
+            })
+        })
+    }
+}
+
 
 // Adicionando interação aos corações
 function heart(logged) {

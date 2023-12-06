@@ -37,6 +37,17 @@ function userType(role, deleteBtn, editBtn, indice) {
             editPrompt.querySelector('#edit-stars').value = dados.itens[indice].stars
             editPrompt.querySelector('#edit-stock').value = dados.itens[indice].stock
 
+            editPrompt.querySelector('#edit-form').addEventListener("reset", (e) => {
+                e.preventDefault()
+
+                editPrompt.querySelector('#edit-name').value = dados.itens[indice].name
+                editPrompt.querySelector('#edit-description').value = dados.itens[indice].description
+                editPrompt.querySelector('#edit-price').value = dados.itens[indice].price
+                editPrompt.querySelector('#edit-discount').value = dados.itens[indice].discount
+                editPrompt.querySelector('#edit-stars').value = dados.itens[indice].stars
+                editPrompt.querySelector('#edit-stock').value = dados.itens[indice].stock
+            })
+
             editPrompt.querySelector('#edit-form').addEventListener("submit", (e) => {
                 e.preventDefault()
 
@@ -47,18 +58,20 @@ function userType(role, deleteBtn, editBtn, indice) {
 
                 dados.itens[indice].name = editPrompt.querySelector('#edit-name').value
                 dados.itens[indice].description = editPrompt.querySelector('#edit-description').value
-                dados.itens[indice].price = editPrompt.querySelector('#edit-price').value.replace(',', '.')
+                dados.itens[indice].price = Number(editPrompt.querySelector('#edit-price').value.replace(',', '.'))
                 dados.itens[indice].discount = editPrompt.querySelector('#edit-discount').value.replace(',', '.')
                 dados.itens[indice].stars = editPrompt.querySelector('#edit-stars').value
                 dados.itens[indice].stock = editPrompt.querySelector('#edit-stock').value
                 editPrompt.classList.add("hidden")
                 cards()
 
-                wishlist.forEach((item, index) => { // Arrumar depois, desconto não funcionando corretamente no wishlist
+                let itemDiscount = (dados.itens[indice].price * (100 - dados.itens[indice].discount) / 100)
+
+                wishlist.forEach((item, index) => {
                     if (item.id == itemId) {
                         console.log(dados.itens[indice].name, Number(itemE.querySelector('.price-value').querySelector('span').innerHTML.replace(',', '.')))
                         wishlist[index].name = dados.itens[indice].name
-                        wishlist[index].price = Number(itemE.querySelector('.price-value').querySelector('span').innerHTML.replace(',', '.'))
+                        wishlist[index].price = Number(itemDiscount)
                     }
                 })
                 listAdd()

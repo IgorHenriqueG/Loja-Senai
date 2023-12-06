@@ -1,4 +1,15 @@
 const dropdowns = document.querySelectorAll('.dropdown')
+
+const reclicle = document.querySelector('.bi-recycle')
+
+reclicle.addEventListener('mouseover', () => {
+    document.querySelector('.wishlist-text').classList.remove('hidden')
+})
+
+reclicle.addEventListener('mouseout', () => {
+    document.querySelector('.wishlist-text').classList.add('hidden')
+})
+
 function dropdown(){
     const cardsFilter = document.querySelectorAll('.card')
     dropdowns.forEach(dropdown => {
