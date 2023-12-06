@@ -148,6 +148,14 @@ registerForm.addEventListener('submit', (e) => {
 // Criando os cards em referência a quantos itens existem no arquivo JSON
 
 function cards() {
+    var heartsSave = []
+
+    document.querySelectorAll('.heart').forEach((heart) => {
+        if(heart.classList.contains('liked')) {
+            heartsSave.push(heart.parentElement.parentElement.parentElement.getAttribute('item-id'))
+        }
+    })
+
     cardsContainer.innerHTML = ''
     cardsContainer.innerHTML = `
     <div class="card model">
@@ -253,5 +261,15 @@ function cards() {
     })
     document.querySelector('.model').remove();
     dropdown()
+
     heart(logged)
+
+    if(heartsSave.length > 0){
+        heartsSave.forEach((item) => {
+            if(document.querySelector(`[item-id="${item}"] .heart`)){
+                document.querySelector(`[item-id="${item}"] .heart`).classList.add('liked')
+                document.querySelector(`[item-id="${item}"] .heart`).src = '../assets/heartfill.png'
+            }
+        })
+    }
 }

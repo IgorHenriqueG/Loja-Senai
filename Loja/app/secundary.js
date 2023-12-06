@@ -60,6 +60,7 @@ function heart(logged) {
                         })
                         listAdd()
                     }
+                    
                 }
             }else{
                 heart.parentNode.querySelector('.heart-text').classList.remove('hidden')

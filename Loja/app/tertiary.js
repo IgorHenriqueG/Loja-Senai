@@ -6,23 +6,28 @@ var wishlist = []
 function userType(role, deleteBtn, editBtn, indice) {
     if(role == "Manager" || role == "Supervisor") {
         if(role == "Manager") {
-            deleteBtn.addEventListener("click", () => {
+            deleteBtn.addEventListener("click", (e) => {
+                var item = e.target.parentElement.parentElement
+                var itemId = Number(item.getAttribute('item-id'))
                 if(confirm('Você deseja deletar o item?') == true){
                     dados.itens.splice(indice, 1)
                     cards()
-                    // wishlist.forEach((item, index) => {
-                    //     console.log(item.id, indice, index)
-                    //     if (indice == item.id && item.id == index) {
-                    //         wishlist.splice(indice, 1)
-                    //     }
-                    // })
-                    // listAdd()
+
+                    wishlist.forEach((item, index) => {
+                        if (item.id == itemId) {
+                            wishlist.splice(index, 1)
+                        }
+                    })
+                    listAdd()
                 }
                     
             })
         }
-        editBtn.addEventListener("click", () => {
-            
+        editBtn.addEventListener("click", (e) => {
+
+            var itemE = e.target.parentElement.parentElement
+            var itemId = Number(itemE.getAttribute('item-id'))
+
             editPrompt.classList.remove("hidden")
 
             editPrompt.querySelector('#edit-name').value = dados.itens[indice].name
@@ -34,6 +39,12 @@ function userType(role, deleteBtn, editBtn, indice) {
 
             editPrompt.querySelector('#edit-form').addEventListener("submit", (e) => {
                 e.preventDefault()
+
+                if(Number(editPrompt.querySelector('#edit-price').value) < 0 || Number(editPrompt.querySelector('#edit-price').value) > 10000 ){
+                    alert('O preço deve estar entre 0 e 10.000')
+                    return
+                }
+
                 dados.itens[indice].name = editPrompt.querySelector('#edit-name').value
                 dados.itens[indice].description = editPrompt.querySelector('#edit-description').value
                 dados.itens[indice].price = editPrompt.querySelector('#edit-price').value.replace(',', '.')
@@ -41,8 +52,17 @@ function userType(role, deleteBtn, editBtn, indice) {
                 dados.itens[indice].stars = editPrompt.querySelector('#edit-stars').value
                 dados.itens[indice].stock = editPrompt.querySelector('#edit-stock').value
                 editPrompt.classList.add("hidden")
-                indice = null
                 cards()
+
+                wishlist.forEach((item, index) => { // Arrumar depois, desconto não funcionando corretamente no wishlist
+                    if (item.id == itemId) {
+                        console.log(dados.itens[indice].name, Number(itemE.querySelector('.price-value').querySelector('span').innerHTML.replace(',', '.')))
+                        wishlist[index].name = dados.itens[indice].name
+                        wishlist[index].price = Number(itemE.querySelector('.price-value').querySelector('span').innerHTML.replace(',', '.'))
+                    }
+                })
+                listAdd()
+                indice = null
             })
             
             editPrompt.querySelector('#edit-form').addEventListener("reset", () => {
@@ -100,7 +120,7 @@ function wishlistQty(){
 }
 
 function calculate(target){
-    wishlist.forEach((item, index) => {
+    wishlist.forEach((item) => {
         if(target.parentElement.parentElement.getAttribute('item-id') == item.id){
             console.log(target.parentElement.parentElement.getAttribute('item-id'))
             item.quantity = Number(target.querySelector('.product-quantity').innerHTML)
