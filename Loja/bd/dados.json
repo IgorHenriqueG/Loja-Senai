@@ -322,7 +322,7 @@
         {
             "id": 25,
             "type": "acessorios",
-            "name": "Controle PS4",
+            "name": "VR ",
             "price": 600.01,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/aula19/ItemTest/img/Images/Games/FIFA_PC.png",
@@ -334,7 +334,7 @@
         {
             "id": 26,
             "type": "acessorios",
-            "name": "Controle Xbox ",
+            "name": "Controle Xbox One/Series S/X",
             "price": 600.01,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/aula19/ItemTest/img/Images/Games/FIFA_PC.png",
@@ -345,7 +345,18 @@
         },{
             "id": 27,
             "type": "acessorios",
-            "name": "FIFA 22",
+            "name": "Controle Xbox One/Series S/X",
+            "price": 600.01,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/aula19/ItemTest/img/Images/Games/FIFA_PC.png",
+            "imageHover": "",
+            "description": "PC",
+            "stock": 100,
+            "stars": 5
+        },{
+            "id": 28,
+            "type": "acessorios",
+            "name": "Controle Xbox One/Series S/X",
             "price": 600.01,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/aula19/ItemTest/img/Images/Games/FIFA_PC.png",
