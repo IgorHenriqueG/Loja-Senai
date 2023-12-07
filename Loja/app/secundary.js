@@ -5,6 +5,89 @@ const logo = document.getElementById('logo')
 const loginArrow = document.querySelector('#login-arrow')
 const wishlistModel = document.querySelector('.wishlist-item-container')
 const wishlistRecicleBtn = document.querySelector('.bi-recycle')
+const buyBtn = document.querySelector('#buyBtn')
+
+
+// Lista de compra
+
+// buyBtn.onclick = () => {
+
+// }
+
+buyBtn.onclick = () => {
+    var totalBuy = 0
+    const date = new Date()
+        document.querySelector('.purchased-list-body').innerHTML += `
+            <div class="purchased-item" purchased-id="1">
+                <p>${date.toLocaleTimeString('pt-BR')} - ${date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()}</p>
+                <p>${user}</p>
+                <p>${wishlist.forEach(item => {
+                    totalBuy += item.quantity
+                }), totalBuy}</p>
+                <p>1</p>
+                <div class="purchased-item-more">
+                    <i class="bi bi-arrow-down-short"></i>
+                    <p>Deletar</p>
+                </div>
+
+                <div class="purchased-item-more-container">
+                    <div class="purchased-item-more-content">
+                        <div class="purchased-item-more-header">
+                            <p>Produto</p>
+                            <p>Quantidade</p>
+                            <p>Preço</p>
+                        </div>
+                            ${wishlist.forEach(item => {
+                                return `
+                                <div class="purchased-item-more-item">
+                                    <p>${item.name}</p>
+                                    <p>${item.quantity}</p>
+                                    <p>R$${(item.price * item.quantity).toFixed(2)}</p>
+                                </div>
+                                `
+                            })}
+                    </div>
+                </div>
+            </div>
+        `
+}
+
+{/* <div class="purchased-item" purchased-id="${venda.id}">
+        <p>01/01/2021</p>
+        <p>${user}</p>
+        <p>2</p>
+        <p>1</p>
+        <div class="purchased-item-more">
+            <i class="bi bi-arrow-down-short"></i>
+            <p>Deletar</p>
+        </div>
+
+        <div class="purchased-item-more-container">
+            <div class="purchased-item-more-content">
+                <div class="purchased-item-more-header">
+                    <p>Produto</p>
+                    <p>Quantidade</p>
+                    <p>Preço</p>
+                </div>
+                    <div class="purchased-item-more-item">
+                        <p>PlayStation 5</p>
+                        <p>1</p>
+                        <p>R$ 4.999,00</p>
+                    </div>
+                    <div class="purchased-item-more-item">
+                        <p>PlayStation 5</p>
+                        <p>1</p>
+                        <p>R$ 4.999,00</p>
+                    </div>
+
+                    <div class="purchased-more-total">
+                        <p>2</p>
+                        <p>Total: R$ 9.998,00</p>
+                    </div>
+            </div>
+        </div>
+    </div> */}
+
 
 function listAdd(){
     let total = 0
@@ -202,3 +285,4 @@ eyes.forEach(eye => {
         }
     }
 })
+

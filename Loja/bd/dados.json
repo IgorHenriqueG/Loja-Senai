@@ -310,7 +310,19 @@
             "id": 24,
             "type": "Controles",
             "name": "Controle PS5",
-            "price": 1320.60,
+            "price": 398.00,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/acessorios/ControlePS5_basic.png",
+            "imageHover": "",
+            "description": "Controle PS5",
+            "stock": 8,
+            "stars": 5
+        },
+        {
+            "id": 25,
+            "type": "Controles",
+            "name": "Controle PS5",
+            "price": 960.99,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/acessorios/Harry_Potter_comands.png",
             "imageHover": "",
@@ -319,7 +331,7 @@
             "stars": 5
         },
         {
-            "id": 25,
+            "id": 26,
             "type": "Controles",
             "name": "VR PS5",
             "price": 4499.90,
@@ -331,18 +343,18 @@
             "stars": 5
         },
         {
-            "id": 26,
+            "id": 27,
             "type": "Controles",
             "name": "Controle PS4",
             "price": 284.90,
             "discount": 0,
-            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/aula19/ItemTest/img/Images/Games/FIFA_PC.png",
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/acessorios/dualshock_PS4.png",
             "imageHover": "",
             "description": "",
             "stock": 30,
             "stars": 4
         },{
-            "id": 27,
+            "id": 28,
             "type": "Controles",
             "name": "Controle Xbox One/Series S/X",
             "price": 1000.30,
@@ -354,10 +366,10 @@
             "stars": 5
         },
         {
-            "id": 28,
+            "id": 29,
             "type": "Controles",
             "name": "Controle Xbox One/Series S/X",
-            "price": 999.90,
+            "price": 849.90,
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/acessorios/Controle_Xbox_SerieS_Personalizado.png",
             "imageHover": "",
@@ -366,7 +378,7 @@
             "stars": 5
         },
         {
-            "id": 29,
+            "id": 30,
             "type": "Controles",
             "name": "Controle Xbox 360",
             "price": 50.00,
@@ -378,7 +390,7 @@
             "stars": 4
         },
         {
-            "id": 30,
+            "id": 31,
             "type": "Mouse",
             "name": "Mouse Redragon",
             "price": 194.90,
@@ -390,7 +402,7 @@
             "stars": 5 
         },
         {
-            "id": 31,
+            "id": 32,
             "type": "Teclado",
             "name": "Teclado Redragon",
             "price": 288.99,
@@ -402,7 +414,7 @@
             "stars": 5
         },
         {
-            "id": 32,
+            "id": 33,
             "type": "Headset",
             "name": "Headset Redragon",
             "price": 75.90,
@@ -414,7 +426,7 @@
             "stars": 5
         },
         {
-            "id": 33,
+            "id": 34,
             "type": "Microfone",
             "name": "Microfone Redragon",
             "price": 309.29,
@@ -424,6 +436,14 @@
             "description": "",
             "stock": 8,
             "stars": 5
+        }
+    ],
+    "Vendas": [
+        {
+            "date": "2021-10-01",
+            "user": "Igor",
+            "products": "2",
+            "id": "1"
         }
     ]
 }
