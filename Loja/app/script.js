@@ -96,6 +96,7 @@ loginForm.addEventListener('submit', (e) => {
 document.querySelector('.logout').addEventListener('click', () => {
     logged = false
     usuario = {}
+    document.querySelector('.wishlist').classList.remove('active')
     menu(logged)
     cards()
     heart(logged)
@@ -149,12 +150,19 @@ registerForm.addEventListener('submit', (e) => {
 
 function cards() {
     var heartsSave = []
+    var lastConsole = 0
 
-    document.querySelectorAll('.heart').forEach((heart) => {
-        if(heart.classList.contains('liked')) {
-            heartsSave.push(heart.parentElement.parentElement.parentElement.getAttribute('item-id'))
-        }
-    })
+    if(logged){
+        document.querySelectorAll('.heart').forEach((heart) => {
+            if(heart.classList.contains('liked')) {
+                heartsSave.push(heart.parentElement.parentElement.parentElement.getAttribute('item-id'))
+            }
+        })
+    }else {
+        wishlist = []
+        listAdd()
+    }
+    
 
     cardsContainer.innerHTML = ''
     cardsContainer.innerHTML = `
@@ -236,7 +244,7 @@ function cards() {
 
         if(item.stock == 0){
             model.querySelector('.soldout').classList.remove('hidden')
-        }
+        }     
 
         model.classList.remove('model')
         model.setAttribute('item-id', item.id)
@@ -257,10 +265,12 @@ function cards() {
                 rating.innerHTML += `<img src="../assets/star-empty.png" draggable="false">`
             }
         }
+
         cardsContainer.appendChild(model)
     })
     document.querySelector('.model').remove();
     dropdown()
+    wishlistRecicle()
 
     heart(logged)
 

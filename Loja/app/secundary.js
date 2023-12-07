@@ -3,12 +3,19 @@ const loginBtn = document.getElementById('login')
 const registerBtn = document.getElementById('register')
 const logo = document.getElementById('logo')
 const loginArrow = document.querySelector('#login-arrow')
-const wishlistModel = document.querySelector('.wishlist')
-
+const wishlistModel = document.querySelector('.wishlist-item-container')
+const wishlistRecicleBtn = document.querySelector('.bi-recycle')
 
 function listAdd(){
+    let total = 0
     wishlistModel.innerHTML = ''
+    if(wishlist.length == 0){
+        document.querySelector('.wishlist-itens-number').classList.add('hidden')
+        wishlistModel.innerHTML = '<p class="wishlist-empty">Sua Lista de Desejos parece vazia<br>que tal adicionar alguns itens?</p>'
+    }
+    
     wishlist.forEach(item => {
+        total += item.quantity
         wishlistModel.innerHTML += `
             <div class="wishlist-item" item-id="${item.id}">
                 <img src="${item.image}" draggable="false">
@@ -18,6 +25,7 @@ function listAdd(){
                     <p class="product-unity">R$${item.price.toFixed(2)}</p>
                 </div>
                 <div class="wishlist-item-actions-container">
+                    <i class="bi bi-trash3-fill del-wishlist"></i>
                     <div class="wishlist-item-actions">
                         <i class="bi bi-dash-square wishlist-icon dash-icon"></i>
                         <p class="product-quantity">${item.quantity}</p>
@@ -27,8 +35,61 @@ function listAdd(){
             </div>
         `
     })
+
+    if(total > 0 && total < 100){
+        document.querySelector('.wishlist-itens-number').innerHTML = total
+        document.querySelector('.wishlist-itens-number').classList.remove('hidden')
+    }else if(total > 99){
+        document.querySelector('.wishlist-itens-number').innerHTML = '99+'
+        document.querySelector('.wishlist-itens-number').classList.remove('hidden')
+    }
+    
     wishlistQty()
+    listRemove()
+    wishlistCalc()
 }
+
+function wishlistRecicle(){
+    wishlistRecicleBtn.onclick = () => {
+        wishlist = []
+        listAdd()
+        dados.itens.forEach((item) => {
+            document.querySelectorAll('.card')[item.id - 1].querySelector('.heart').classList.remove('liked')
+            document.querySelectorAll('.card')[item.id - 1].querySelector('.heart').src = '../assets/heart.png'
+        })
+    }
+}
+
+function wishlistCalc(){
+    let total = 0
+    wishlist.forEach(item => {
+        total += item.price * item.quantity
+    })
+    document.querySelector('.wishlist-total span').innerHTML = total.toFixed(2)
+}
+
+function listRemove() {
+    var delList = document.querySelectorAll('.del-wishlist')
+    if(delList.length > 0){
+        delList.forEach((del) => {
+            del.addEventListener("click", (e) => {  
+                wishlist.forEach((item, index) => {
+                    if(item.id == Number(e.target.parentElement.parentElement.getAttribute('item-id'))){
+                        wishlist.splice(index, 1)
+                    }
+                })
+                listAdd()
+                dados.itens.forEach((item, index) => {
+                    if(item.id == Number(e.target.parentElement.parentElement.getAttribute('item-id'))){
+                        document.querySelectorAll('.card')[index].querySelector('.heart').classList.remove('liked')
+                        document.querySelectorAll('.card')[index].querySelector('.heart').src = '../assets/heart.png'
+                    }
+                })
+            })
+        })
+    }
+}
+
 
 // Adicionando interação aos corações
 function heart(logged) {

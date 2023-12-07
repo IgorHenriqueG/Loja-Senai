@@ -290,12 +290,17 @@
             "discount": 0,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/Pikachu_Nintendo.png",
             "imageHover": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Games/PikachuC_Nintendo.png",
+<<<<<<< HEAD
             "description": "XBOX Series X",
+=======
+            "description": "Nintendo Switch",
+>>>>>>> aefdcb6303d29b6d6599b52854ebcab48fe2d2eb
             "stock": 100,
             "stars": 5
         },
         {
             "id": 23,
+<<<<<<< HEAD
             "type": "game",
             "name": "FIFA 22",
             "price": 600.01,
@@ -303,6 +308,15 @@
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/aula19/ItemTest/img/Images/Games/FIFA_PS5.png",
             "imageHover": "",
             "description": "PlayStation 5",
+=======
+            "type": "console",
+            "name": "Xbox 360",
+            "price": 600.01,
+            "discount": 0,
+            "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/Consoles/xbox_360.png",
+            "imageHover": "",
+            "description": "",
+>>>>>>> aefdcb6303d29b6d6599b52854ebcab48fe2d2eb
             "stock": 100,
             "stars": 5
         },
