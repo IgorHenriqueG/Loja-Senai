@@ -35,7 +35,7 @@
             <div class="user hidden">
                 <button class="logout" id="logout"><p>Logout</p></button>
                 <p class="user-bar">|</p>
-                <i class="bi bi-bag bag" id="bag"></i>
+                <i class="bi bi-bag bag" id="bag"><div class="wishlist-itens-number hidden"></div></i>
             </div>
         </nav>
     </header>
@@ -150,6 +150,41 @@
                     <button id="cancel-edit" type="reset">Cancelar</button>
                 </div>
             </form>
+        </div>
+
+        <div class="purchased-container">
+            <div class="purchased-list-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Usuário</th>
+                            <th>Produtos</th>
+                            <th>Total</th>
+                            <th>Id</th>
+                            <th>More</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/01/2022 - 12:00</td>
+                            <td>Igor Henrique</td>
+                            <td>2</td>
+                            <td>R$ 100,00</td>
+                            <td>1</td>
+                            <td class="purchased-itens-arrow"><i class="bi bi-arrow-down-short"></i></td>
+                        </tr>
+                        <tr>
+                            <td>01/01/2022 - 12:00</td>
+                            <td>Carlos Augusto Rodrigues</td>
+                            <td>2</td>
+                            <td>R$ 100,00</td>
+                            <td>1</td>
+                            <td class="purchased-itens-arrow"><i class="bi bi-arrow-down-short"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="wishlist">

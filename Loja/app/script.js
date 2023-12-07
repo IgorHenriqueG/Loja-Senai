@@ -150,6 +150,7 @@ registerForm.addEventListener('submit', (e) => {
 
 function cards() {
     var heartsSave = []
+    var lastConsole = 0
 
     if(logged){
         document.querySelectorAll('.heart').forEach((heart) => {
@@ -243,7 +244,7 @@ function cards() {
 
         if(item.stock == 0){
             model.querySelector('.soldout').classList.remove('hidden')
-        }
+        }     
 
         model.classList.remove('model')
         model.setAttribute('item-id', item.id)
@@ -264,10 +265,12 @@ function cards() {
                 rating.innerHTML += `<img src="../assets/star-empty.png" draggable="false">`
             }
         }
+
         cardsContainer.appendChild(model)
     })
     document.querySelector('.model').remove();
     dropdown()
+    wishlistRecicle()
 
     heart(logged)
 
