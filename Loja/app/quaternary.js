@@ -98,31 +98,36 @@ function dropdown(){
                 })
             }else if (mouseTarget == "Controles"){
                 cardsFilter.forEach(card => {
-                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Controles"){
+                    card.classList.remove('hidden')
+                    if(!card.classList.contains('Controles')){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Headset"){
                 cardsFilter.forEach(card => {
-                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Headset"){
+                    card.classList.remove('hidden')
+                    if(!card.classList.contains('Headset')){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Microfone"){
                 cardsFilter.forEach(card => {
-                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Microfone"){
+                    card.classList.remove('hidden')
+                    if(!card.classList.contains('Microfone')){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Mouse"){
                 cardsFilter.forEach(card => {
-                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Mouse"){
+                    card.classList.remove('hidden')
+                    if(!card.classList.contains('Mouse')){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Teclado"){
                 cardsFilter.forEach(card => {
-                    if(card.querySelector('p').innerHTML.split(' ')[0] != "Teclado"){
+                    card.classList.remove('hidden')
+                    if(!card.classList.contains('Teclado')){
                         card.classList.add('hidden')
                     }
                 })
