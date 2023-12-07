@@ -1036,56 +1036,36 @@ main {
     font-family: var(--ff-tertiary);
 }
 
-table {
-    width: 100%;
-    color: var(--White);
-    border-collapse: collapse;
-    border-radius: 15px 15px 0 0;
-    font-size: 18px;
-    overflow: hidden;
-}
-
-table thead tr {
-    background-color: var(--Purple);
-}
-
-th, td {
-    padding: 10px;
-}
-
-table tbody tr:nth-child(even) {
-    background-color: var(--Purple-2);
-}
-
-table tbody tr:nth-child(odd) {
-    background-color: var(--Purple);
-}
-
-table tbody tr td button {
-    background-color: var(--Purple);
-    color: var(--White);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-table tbody tr td button:hover {
-    background-color: var(--Purple-2);
-}
-
-.purchased-itens-arrow {
+.purchased-list-container .purchased-list{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     height: 100%;
+    overflow-y: auto;
+    padding: 10px;
 }
 
-.purchased-itens-arrow i {
-    font-size: 20px;
-    cursor: pointer;
+.purchased-list-container .purchased-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-bottom: 1px solid var(--Grey-1);
+}
+
+
+.purchased-list-container .purchased-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-bottom: 1px solid var(--Grey-1);
+
 }
 
 /* Footer */
