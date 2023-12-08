@@ -113,17 +113,30 @@ function wishlistQty(){
         
     })
 
+
     plusIcon.forEach((plus) => {
+        var stock = 0
         if(plus.parentElement.querySelector('.product-quantity').innerHTML == 10) {
             plus.style.cursor = "not-allowed"
         } else {
             plus.addEventListener('click', (e) => {
                 e.target.parentElement.querySelector('.dash-icon').style.cursor = "pointer"
                 if(e.target.parentElement.querySelector('.product-quantity').innerHTML < 10) {
-                    plus.style.cursor = "pointer"
-                    e.target.parentElement.querySelector('.product-quantity').innerHTML = Number(e.target.parentElement.querySelector('.product-quantity').innerHTML) + 1
-                    if(e.target.parentElement.querySelector('.product-quantity').innerHTML == 10){
+
+                    dados.itens.forEach((item) => {
+                        if(item.id == Number(e.target.parentElement.parentElement.parentElement.getAttribute('item-id'))){
+                            stock = item.stock 
+                        }
+                    })
+
+                    if(e.target.parentElement.querySelector('.product-quantity').innerHTML == stock){
                         plus.style.cursor = "not-allowed"
+                    }else if(e.target.parentElement.querySelector('.product-quantity').innerHTML < stock){
+                        plus.style.cursor = "pointer"
+                        e.target.parentElement.querySelector('.product-quantity').innerHTML = Number(e.target.parentElement.querySelector('.product-quantity').innerHTML) + 1
+                        if(e.target.parentElement.querySelector('.product-quantity').innerHTML == 10){
+                            plus.style.cursor = "not-allowed"
+                        }
                     }
                 }
                 calculate(e.target.parentElement)

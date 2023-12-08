@@ -438,12 +438,5 @@
             "stars": 5
         }
     ],
-    "Vendas": [
-        {
-            "date": "2021-10-01",
-            "user": "Igor",
-            "products": "2",
-            "id": "1"
-        }
-    ]
+    "vendas": []
 }

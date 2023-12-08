@@ -6,30 +6,115 @@ const loginArrow = document.querySelector('#login-arrow')
 const wishlistModel = document.querySelector('.wishlist-item-container')
 const wishlistRecicleBtn = document.querySelector('.bi-recycle')
 const buyBtn = document.querySelector('#buyBtn')
+const fileDownload = document.querySelector('#file-download')
+const purchaseList = document.querySelector('#purchase-list')
 
+purchaseList.onclick = () => {
+    if(document.querySelector('.purchased-container').classList.contains('hidden')) {
+        document.querySelector('.purchased-container').classList.remove('hidden')
+    } else {
+        document.querySelector('.purchased-container').classList.add('hidden')
+    }
+}
+
+
+fileDownload.onclick = () => {
+    const data = JSON.stringify(dados)
+    const file = new Blob([data], { type: 'application/json' })
+    const a = document.createElement('a')
+    const url = URL.createObjectURL(file)
+    a.href = url
+    a.download = 'data.json'
+    document.body.appendChild(a)
+    a.click()
+    setTimeout(() => {
+        document.body.removeChild(a)
+        window.URL.revokeObjectURL(url)
+    }, 0)
+}
+
+function loadPurchase(){
+    if(dados.vendas.length == 0) {
+        document.querySelector('.purchased-container').classList.add('hidden')
+    }else{
+        purchaseListLoad()
+    }
+    showMore()
+}
 
 // Lista de compra
 
-// buyBtn.onclick = () => {
-
-// }
-
 buyBtn.onclick = () => {
-    var totalBuy = 0
-    const date = new Date()
-        document.querySelector('.purchased-list-body').innerHTML += `
-            <div class="purchased-item" purchased-id="1">
-                <p>${date.toLocaleTimeString('pt-BR')} - ${date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()}</p>
-                <p>${user}</p>
-                <p>${wishlist.forEach(item => {
-                    totalBuy += item.quantity
-                }), totalBuy}</p>
-                <p>1</p>
-                <div class="purchased-item-more">
-                    <i class="bi bi-arrow-down-short"></i>
-                    <p>Deletar</p>
-                </div>
+        if(wishlist.length == 0){
+            alert('Adicione itens na lista de desejos')
+            return
+        }else {
+            const date = new Date()
+            let data = date.toLocaleTimeString('pt-BR') + " - " + date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()
+            let usuario = user
+            let totalBuy = 0
+            let wishlistItemPurchased = ''
+            let total = document.querySelector('.wishlist-total').querySelector('span').innerHTML
+            let id = dados.vendas.length + 1
 
+            wishlist.forEach(item => {
+                totalBuy += item.quantity
+
+                dados.itens.forEach((product) => {
+                    if(item.id == product.id) {
+                        product.stock -= item.quantity
+                    }
+                })
+            })
+
+            wishlist.forEach(item => {
+                wishlistItemPurchased +=  `
+                <div class="purchased-item-more-item">
+                    <p>${item.name}</p>
+                    <p>${item.quantity}</p>
+                    <p>R$${(item.price * item.quantity).toFixed(2)}</p>
+                </div>`
+            })
+
+            dados.vendas.push({
+                id: id,
+                data: data,
+                cliente: usuario,
+                totalBuy: totalBuy,
+                itens: wishlistItemPurchased,
+                total: total
+            })
+            console.log(dados)
+            purchaseListLoad()
+            cards()
+        }
+        
+        showMore()
+        wishlist = []
+        wishlistCalc()
+        listAdd()
+        document.querySelector('.wishlist').classList.remove('active')
+        document.querySelectorAll('.heart').forEach((heart) => {
+            heart.classList.remove('liked')
+            heart.src = '../assets/heart.png'
+        })
+}
+
+function purchaseListLoad(){
+    document.querySelector('.purchased-list-body').innerHTML = ''
+    dados.vendas.forEach((venda) => {
+        document.querySelector('.purchased-list-body').innerHTML += `
+            <div class="purchased-item" item-id="${venda.id}">
+                <div class="purchased-item-basic">
+                    <p>${venda.data}</p>
+                    <p>${venda.cliente}</p>
+                    <p>${venda.totalBuy}</p>
+                    <p>1</p>
+                    <div class="purchased-item-more">
+                        <i class="bi bi-arrow-down-short show-more-arrow"></i>
+                        <p class="purchased-item-delete">Deletar</p>
+                    </div>
+                </div>
                 <div class="purchased-item-more-container">
                     <div class="purchased-item-more-content">
                         <div class="purchased-item-more-header">
@@ -37,57 +122,51 @@ buyBtn.onclick = () => {
                             <p>Quantidade</p>
                             <p>Preço</p>
                         </div>
-                            ${wishlist.forEach(item => {
-                                return `
-                                <div class="purchased-item-more-item">
-                                    <p>${item.name}</p>
-                                    <p>${item.quantity}</p>
-                                    <p>R$${(item.price * item.quantity).toFixed(2)}</p>
-                                </div>
-                                `
-                            })}
+                        <div class="purchased-item-more-item-container">
+                            ${venda.itens}
+                        </div>
+                        <div class="purchased-item-total">
+                            <p></p>
+                            <p>Total: R$${venda.total}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         `
+        showMore()
+    })
 }
 
-{/* <div class="purchased-item" purchased-id="${venda.id}">
-        <p>01/01/2021</p>
-        <p>${user}</p>
-        <p>2</p>
-        <p>1</p>
-        <div class="purchased-item-more">
-            <i class="bi bi-arrow-down-short"></i>
-            <p>Deletar</p>
-        </div>
+function showMore() {
+    const showMoreBtns = document.querySelectorAll('.show-more-arrow')
+    const purchasedItemDelete = document.querySelectorAll('.purchased-item-delete')
 
-        <div class="purchased-item-more-container">
-            <div class="purchased-item-more-content">
-                <div class="purchased-item-more-header">
-                    <p>Produto</p>
-                    <p>Quantidade</p>
-                    <p>Preço</p>
-                </div>
-                    <div class="purchased-item-more-item">
-                        <p>PlayStation 5</p>
-                        <p>1</p>
-                        <p>R$ 4.999,00</p>
-                    </div>
-                    <div class="purchased-item-more-item">
-                        <p>PlayStation 5</p>
-                        <p>1</p>
-                        <p>R$ 4.999,00</p>
-                    </div>
-
-                    <div class="purchased-more-total">
-                        <p>2</p>
-                        <p>Total: R$ 9.998,00</p>
-                    </div>
-            </div>
-        </div>
-    </div> */}
-
+    showMoreBtns.forEach(btn => {
+        btn.onclick = () => {
+            const content = btn.parentElement.parentElement.parentElement.querySelector('.purchased-item-more-container')
+            if(!content.classList.contains('show')) {
+                content.classList.add('show')
+                btn.setAttribute('style', 'rotate: 180deg;')
+            } else {
+                content.classList.remove('show')
+                btn.setAttribute('style', 'rotate: 0deg;')
+            }
+        }
+    })
+    
+    purchasedItemDelete.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            console.log(e.target.parentElement.parentElement.parentElement.getAttribute('item-id'))
+            const id = Number(e.target.parentElement.parentElement.parentElement.getAttribute('item-id'))
+            dados.vendas.forEach((item, index) => {
+                if(item.id == id) {
+                    dados.vendas.splice(index, 1)
+                    purchaseListLoad()
+                }
+            }) 
+        })
+    })
+}
 
 function listAdd(){
     let total = 0

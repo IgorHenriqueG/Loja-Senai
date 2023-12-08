@@ -1022,7 +1022,22 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 0;
+    z-index: 100;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.purchased-list-container ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.purchased-list-container ::-webkit-scrollbar {
+    width: 10px;
 }
 
 .purchased-list-container {
@@ -1045,7 +1060,6 @@ main {
     width: 100%;
     height: 100%;
     overflow-y: auto;
-    
 }
 
 .purchased-list-header {
@@ -1059,6 +1073,7 @@ main {
     user-select: none;
     background-color: var(--Purple);
     color: var(--White);
+    border-radius: 15px 15px 0 0;
 }
 
 .purchased-list-body {
@@ -1070,15 +1085,16 @@ main {
 
 
 .purchased-item {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    padding: 10px;
     font-size: 20px;
-    /* overflow: hidden; */
     user-select: none;
     border-bottom: 1px solid var(--Grey-2);
+}
+
+.purchased-item-basic {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .purchased-item-more {
@@ -1091,24 +1107,31 @@ main {
     cursor: pointer;
 }
 
+.purchased-item-delete {
+    cursor: pointer;
+}
+
 .purchased-item-more {
     display: flex;
 }
 
 .purchased-item-more-container {
-    position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 0;
+    overflow: hidden;
     z-index: 0;
+    transition: 1s;
 }
 
-.purchased-item-more-item {
-    color: var(--Black) !important;
+.purchased-item-more-container.show {
+    height: 100%;
+}
+
+.purchased-item-more-item-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .purchased-item-more-content {
@@ -1116,9 +1139,15 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
-    height: fit-content;
-    /* display: none; */
+    overflow: hidden;
+    transition: 1s;
+}
+
+.purchased-item-more-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: var(--Black) !important;
 }
 
 .purchased-item-more-content div {
@@ -1141,7 +1170,9 @@ main {
     user-select: none;
 }
 
-.purchased-more-total {
+
+
+.purchased-item-total {
     display: flex;
     justify-content: flex-end !important;
     align-items: flex-end;

@@ -10,7 +10,8 @@ var logged = false
 
 var dados = {
     usuarios: [],
-    itens: []
+    itens: [],
+    vendas: []
 }
 
 var usuario = {}
@@ -32,6 +33,7 @@ file.addEventListener('change', (e) => {
         document.querySelector('.container').classList.remove('hidden')
         cards()
         menuLogo()
+        loadPurchase()
     }
 })
 
@@ -97,6 +99,8 @@ document.querySelector('.logout').addEventListener('click', () => {
     logged = false
     usuario = {}
     document.querySelector('.wishlist').classList.remove('active')
+    document.querySelector('#purchase-list').classList.add("hidden")
+    document.querySelector('.purchased-container').classList.add('hidden')
     menu(logged)
     cards()
     heart(logged)
@@ -150,7 +154,6 @@ registerForm.addEventListener('submit', (e) => {
 
 function cards() {
     var heartsSave = []
-    var lastConsole = 0
 
     if(logged){
         document.querySelectorAll('.heart').forEach((heart) => {
@@ -231,12 +234,14 @@ function cards() {
         }
 
         if(logged && usuario.type == 'Manager'){
+            document.querySelector('#purchase-list').classList.remove("hidden")
             model.querySelector('.delete').classList.remove('hidden')
             model.querySelector('.edit').classList.remove('hidden')
             model.querySelector('.delete').removeAttribute('style')
             model.querySelector('.edit').removeAttribute('style')
             userType(usuario.type, model.querySelector('.delete'), model.querySelector('.edit'), i)
         }else if(logged && usuario.type == 'Supervisor'){
+            document.querySelector('#purchase-list').classList.remove("hidden")
             model.querySelector('.edit').classList.remove('hidden')
             model.querySelector('.edit').removeAttribute('style')
             userType(usuario.type, null, model.querySelector('.edit'), i)
