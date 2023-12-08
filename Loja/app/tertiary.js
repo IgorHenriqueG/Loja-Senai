@@ -1,4 +1,5 @@
 const editPrompt = document.querySelector(".edit-prompt")
+const addPrompt = document.querySelector(".add-prompt")
 const wishlistBag = document.querySelector('#bag')
 
 var wishlist = []
@@ -153,4 +154,48 @@ function calculate(target){
             listAdd()
         }
     })
+}
+
+// ADD
+
+function addForm(logged, userType){
+    if(logged && userType == "Manager" || userType == "Supervisor"){
+        document.querySelector('.add-btn-menu').classList.remove('hidden')
+        document.querySelector('#cancel-add').onclick = () => {
+            addPrompt.classList.add('hidden')
+        }
+
+        document.querySelector('#add-btn').onclick = () => {
+            addPrompt.classList.toggle('hidden')
+            document.querySelector('#add-form').addEventListener('submit', (e) => {
+                e.preventDefault()
+
+                if(Number(addPrompt.querySelector('#add-price').value) < 0 || Number(addPrompt.querySelector('#add-price').value) > 10000 ){
+                    alert('O preço deve estar entre 0 e 10.000')
+                    return
+                }
+
+                if(addPrompt.querySelector('#add-type').value == "Jogos" || addPrompt.querySelector('#add-type').value == "Games"){
+
+                var item = {
+                    id: dados.itens.length + 1,
+                    type: addPrompt.querySelector('#add-type').value,
+                    name: addPrompt.querySelector('#add-name').value,
+                    description: addPrompt.querySelector('#add-description').value,
+                    price: Number(addPrompt.querySelector('#add-price').value.replace(',', '.')),
+                    discount: addPrompt.querySelector('#add-discount').value.replace(',', '.'),
+                    stars: addPrompt.querySelector('#add-stars').value,
+                    stock: addPrompt.querySelector('#add-stock').value
+                }
+
+                dados.itens.push(item)
+                cards()
+                addPrompt.classList.add('hidden')
+            })
+        }
+    }else {
+        document.querySelector('.add-btn-menu').classList.add('hidden')
+    }
+    
+    
 }

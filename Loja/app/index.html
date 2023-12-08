@@ -158,6 +158,64 @@
             </form>
         </div>
 
+        <div class="add-btn-menu hidden">
+            <button id="add-btn"><i class="bi bi-plus-square-fill"></i></button>
+        </div>
+
+        <div class="add-prompt hidden">
+            <form id="add-form">
+                <div>
+                    <label for="add-name">Produto</label>
+                    <input type="text" id="add-name">
+                </div>
+
+                <div>
+                    <label for="add-name">Tipo</label>
+                    <input type="text" id="add-type">
+                </div>
+                
+                <div>
+                    <label for="add-description">Descrição</label>
+                    <input type="text" id="add-description">
+                </div>
+
+                <div>
+                    <label for="add-description">Primeira imagem</label>
+                    <input type="text" id="add-image-one">
+                </div>
+
+                <div>
+                    <label for="add-description">Segunda Imagem (Somente para jogos)</label>
+                    <input type="text" id="add-image-two">
+                </div>
+                
+                <div>
+                    <label for="add-price">Preço (R$)</label>
+                    <input type="text" id="add-price">
+                </div>
+
+                <div>
+                    <label for="add-discount">Desconto (%)</label>
+                    <input type="number" id="add-discount" min="0" max="100">
+                </div>
+
+                <div>
+                    <label for="add-stars">Estrelas (0-5)</label>
+                    <input type="number" id="add-stars" min="0" max="5">
+                </div>
+                
+                <div>
+                    <label for="add-stock">Estoque</label>
+                    <input type="number" id="add-stock" min="0">
+                </div>
+
+                <div class="btn-form">
+                    <button id="save-add" type="submit">Salvar</button>
+                    <button id="cancel-add" type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
         <div class="purchased-container hidden">
             <div class="purchased-list-container">
                 <div class="purchased-list">
@@ -170,31 +228,6 @@
                     </div>
 
                     <div class="purchased-list-body">
-                        <!-- <div class="purchased-item" purchased-id="1">
-                            <p>22/22/2022</p>
-                            <p>Igor</p>
-                            <p>5</p>
-                            <p>1</p>
-                            <div class="purchased-item-more">
-                                <i class="bi bi-arrow-down-short"></i>
-                                <p>Deletar</p>
-                            </div>
-            
-                            <div class="purchased-item-more-container">
-                                <div class="purchased-item-more-content">
-                                    <div class="purchased-item-more-header">
-                                        <p>Produto</p>
-                                        <p>Quantidade</p>
-                                        <p>Preço</p>
-                                    </div>
-                                        <div class="purchased-item-more-item">
-                                            <p>PlayStation</p>
-                                            <p>5</p>
-                                            <p>R$1500</p>
-                                        </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
                 </div>
             </div>

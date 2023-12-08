@@ -50,6 +50,7 @@ function loginVerification(p) {
                 setTimeout(() => {
                     loginForm.reset()
                     menu(logged, user.name)
+                    addForm(logged, user.type)
                     cards()
                     heart(logged)
                     setTimeout(() => {
@@ -102,6 +103,7 @@ document.querySelector('.logout').addEventListener('click', () => {
     document.querySelector('#purchase-list').classList.add("hidden")
     document.querySelector('.purchased-container').classList.add('hidden')
     menu(logged)
+    addForm(logged, null)
     cards()
     heart(logged)
 })
