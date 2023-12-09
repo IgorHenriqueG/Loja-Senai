@@ -10,6 +10,12 @@
 </head>
 <body>
 
+    <div class="mobile-warning">
+        <p>This project does not support mobile devices</p>
+        <br>
+        <p>Este projeto não suporta dispositivos mobile</p>
+    </div>
+
     <div class="login-animation">
         <div class="login-animation-bg">
             <h1 id="login-animation-text"></h1>
@@ -170,8 +176,17 @@
                 </div>
 
                 <div>
-                    <label for="add-name">Tipo</label>
-                    <input type="text" id="add-type">
+                    <label for="none">Tipo</label>
+                    <div class="radio-selector">
+                        <input type="radio" id="game-selector" name="add-type" value="jogo">
+                        <label for="game-selector">Jogo</label>
+
+                        <input type="radio" id="console-selector" name="add-type" value="console">
+                        <label for="console-selector">Console</label>
+
+                        <input type="radio" id="accessory-selector" name="add-type" value="acessorio">
+                        <label for="accessory-selector">Acessório</label>
+                    </div>
                 </div>
                 
                 <div>
@@ -180,12 +195,12 @@
                 </div>
 
                 <div>
-                    <label for="add-description">Primeira imagem</label>
+                    <label for="add-image-one">Primeira imagem (URL)</label>
                     <input type="text" id="add-image-one">
                 </div>
 
                 <div>
-                    <label for="add-description">Segunda Imagem (Somente para jogos)</label>
+                    <label for="add-image-two">Segunda Imagem (URL) (Somente para jogos)</label>
                     <input type="text" id="add-image-two">
                 </div>
                 

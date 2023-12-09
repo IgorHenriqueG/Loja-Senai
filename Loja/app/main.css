@@ -604,6 +604,13 @@ main {
     flex-direction: column;
 }
 
+#add-form .radio-selector {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    user-select: none;
+}
+
 #add-form input {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -1272,4 +1279,40 @@ footer .signature {
 footer .names {
     display: flex;
     gap: 10px;
+}
+
+/* Anti-mobile */
+
+.mobile-warning {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        display: none;
+    }
+    .text-container {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
+
+    .mobile-warning {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100vh;
+        z-index: 999;
+        font-family: var(--ff-tertiary);
+        
+    }
+
+    .mobile-warning p {
+        width: 80%;
+        font-size: 2em;
+    }
 }

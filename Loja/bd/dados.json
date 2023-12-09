@@ -308,7 +308,7 @@
         },
         {
             "id": 24,
-            "type": "Controles",
+            "type": "accessory",
             "name": "Controle PS5",
             "price": 398.00,
             "discount": 0,
@@ -320,7 +320,7 @@
         },
         {
             "id": 25,
-            "type": "Controles",
+            "type": "accessory",
             "name": "Controle PS5",
             "price": 960.99,
             "discount": 0,
@@ -332,8 +332,8 @@
         },
         {
             "id": 26,
-            "type": "Controles",
-            "name": "VR PS5",
+            "type": "accessory",
+            "name": "Controle VR PS5",
             "price": 4499.90,
             "discount": 15,
             "image": "https://raw.githubusercontent.com/IgorHenriqueG/Senai-2023/main/1Des/01-fpoo/Aula19/ItemTest/img/Images/acessorios/VR_PS5.png",
@@ -344,7 +344,7 @@
         },
         {
             "id": 27,
-            "type": "Controles",
+            "type": "accessory",
             "name": "Controle PS4",
             "price": 284.90,
             "discount": 0,
@@ -355,7 +355,7 @@
             "stars": 4
         },{
             "id": 28,
-            "type": "Controles",
+            "type": "accessory",
             "name": "Controle Xbox One/Series S/X",
             "price": 1000.30,
             "discount": 0,
@@ -367,7 +367,7 @@
         },
         {
             "id": 29,
-            "type": "Controles",
+            "type": "accessory",
             "name": "Controle Xbox One/Series S/X",
             "price": 849.90,
             "discount": 0,
@@ -379,7 +379,7 @@
         },
         {
             "id": 30,
-            "type": "Controles",
+            "type": "accessory",
             "name": "Controle Xbox 360",
             "price": 50.00,
             "discount": 0,
@@ -391,7 +391,7 @@
         },
         {
             "id": 31,
-            "type": "Mouse",
+            "type": "accessory",
             "name": "Mouse Redragon",
             "price": 194.90,
             "discount": 0,
@@ -403,7 +403,7 @@
         },
         {
             "id": 32,
-            "type": "Teclado",
+            "type": "accessory",
             "name": "Teclado Redragon",
             "price": 288.99,
             "discount": 0,
@@ -415,7 +415,7 @@
         },
         {
             "id": 33,
-            "type": "Headset",
+            "type": "accessory",
             "name": "Headset Redragon",
             "price": 75.90,
             "discount": 0,
@@ -427,7 +427,7 @@
         },
         {
             "id": 34,
-            "type": "Microfone",
+            "type": "accessory",
             "name": "Microfone Redragon",
             "price": 309.29,
             "discount": 0,

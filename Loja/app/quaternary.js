@@ -92,42 +92,42 @@ function dropdown(){
             }else if(mouseTarget == "Acessórios"){
                 cardsFilter.forEach(card => {
                     card.classList.remove('hidden')
-                    if(!card.classList.contains('Acessórios')){
+                    if(!card.classList.contains('accessory')){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Controles"){
                 cardsFilter.forEach(card => {
                     card.classList.remove('hidden')
-                    if(!card.classList.contains('Controles')){
+                    if(card.querySelector('h1').innerHTML.split(' ')[0] != "Controle"){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Headset"){
                 cardsFilter.forEach(card => {
                     card.classList.remove('hidden')
-                    if(!card.classList.contains('Headset')){
+                    if(card.querySelector('h1').innerHTML.split(' ')[0] != "Headset"){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Microfone"){
                 cardsFilter.forEach(card => {
                     card.classList.remove('hidden')
-                    if(!card.classList.contains('Microfone')){
+                    if(card.querySelector('h1').innerHTML.split(' ')[0] != "Microfone"){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Mouse"){
                 cardsFilter.forEach(card => {
                     card.classList.remove('hidden')
-                    if(!card.classList.contains('Mouse')){
+                    if(card.querySelector('h1').innerHTML.split(' ')[0] != "Mouse"){
                         card.classList.add('hidden')
                     }
                 })
             }else if (mouseTarget == "Teclado"){
                 cardsFilter.forEach(card => {
                     card.classList.remove('hidden')
-                    if(!card.classList.contains('Teclado')){
+                    if(card.querySelector('h1').innerHTML.split(' ')[0] != "Teclado"){
                         card.classList.add('hidden')
                     }
                 })

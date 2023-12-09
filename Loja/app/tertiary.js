@@ -164,34 +164,98 @@ function addForm(logged, userType){
         document.querySelector('#cancel-add').onclick = () => {
             addPrompt.classList.add('hidden')
         }
-
+        var bool = false
         document.querySelector('#add-btn').onclick = () => {
+            var itemType = ''
             addPrompt.classList.toggle('hidden')
-            document.querySelector('#add-form').addEventListener('submit', (e) => {
-                e.preventDefault()
+            
 
-                if(Number(addPrompt.querySelector('#add-price').value) < 0 || Number(addPrompt.querySelector('#add-price').value) > 10000 ){
-                    alert('O preço deve estar entre 0 e 10.000')
-                    return
-                }
+            if(bool == false){
+                document.querySelector('#add-form').addEventListener('submit', (e) => {
+                    e.preventDefault()
+    
+                    if(Number(addPrompt.querySelector('#add-price').value) < 0 || Number(addPrompt.querySelector('#add-price').value) > 10000 ){
+                        alert('O preço deve estar entre 0 e 10.000')
+                        return
+                    }
+    
+                    if(document.querySelector('.radio-selector').querySelector('input:checked') != null){
+                        switch(document.querySelector('.radio-selector').querySelector('input:checked').value){
+                        
+                            case 'jogo':
+                                itemType = 'game'
+                                break
+                            case 'console':
+                                itemType = 'console'
+                                break
+                            case 'acessorio':
+                                itemType = 'accessory'
+                                break
+                        }
+                    }
 
-                if(addPrompt.querySelector('#add-type').value == "Jogos" || addPrompt.querySelector('#add-type').value == "Games"){
+                    if(addPrompt.querySelector('#add-name').value == ''){
+                        alert('Escreva o nome do item')
+                        return
+                    }
 
-                var item = {
-                    id: dados.itens.length + 1,
-                    type: addPrompt.querySelector('#add-type').value,
-                    name: addPrompt.querySelector('#add-name').value,
-                    description: addPrompt.querySelector('#add-description').value,
-                    price: Number(addPrompt.querySelector('#add-price').value.replace(',', '.')),
-                    discount: addPrompt.querySelector('#add-discount').value.replace(',', '.'),
-                    stars: addPrompt.querySelector('#add-stars').value,
-                    stock: addPrompt.querySelector('#add-stock').value
-                }
+                    if(addPrompt.querySelector('#add-price').value == ''){
+                        alert('Escreva o preço do item')
+                        return
+                    }
 
-                dados.itens.push(item)
-                cards()
-                addPrompt.classList.add('hidden')
-            })
+                    if(addPrompt.querySelector('#add-stock').value == ''){
+                        alert('Escreva o estoque do item')
+                        return
+                    }
+
+                    if(itemType == 'game'){
+                        if(addPrompt.querySelector('#add-description').value == ''){
+                            alert('Escreva a descrição do item contendo informações sobre o console que o jogo roda')
+                            return
+                        }
+                    }
+
+                    if(document.querySelector('#add-image-one').value == ''){
+                        alert('Escolha pelo menos uma imagem')
+                        return
+                    }
+
+                    if(itemType == 'game'){
+                        if(document.querySelector('#add-image-two').value == ''){
+                            alert('Imagem obrigatoria para jogos')
+                            return
+                        }
+                    }
+    
+                    if(itemType == ''){
+                        alert('Selecione o tipo do item')
+                        return
+                    }else{
+                        var item = {
+                            id: dados.itens.length + 1,
+                            type: itemType,
+                            name: addPrompt.querySelector('#add-name').value,
+                            description: addPrompt.querySelector('#add-description').value,
+                            price: Number(addPrompt.querySelector('#add-price').value.replace(',', '.')),
+                            discount: addPrompt.querySelector('#add-discount').value.replace(',', '.'),
+                            image: document.querySelector('#add-image-one').value,
+                            imageHover: document.querySelector('#add-image-two').value,
+                            stars: addPrompt.querySelector('#add-stars').value,
+                            stock: addPrompt.querySelector('#add-stock').value
+                        }
+                        document.querySelector('#add-form').reset()
+        
+                        dados.itens.push(item)
+                        cards()
+                        addPrompt.classList.add('hidden')
+                    }
+                    bool = true
+                })
+            }else{
+                bool = false
+            }
+            
         }
     }else {
         document.querySelector('.add-btn-menu').classList.add('hidden')
